@@ -11,7 +11,7 @@ namespace UnityStandardAssets._2D
         private bool m_AirControl = true;                 // Whether or not a player can steer while jumping.
         const float k_GroundedRadius = .2f;               // Radius of the overlap circle to determine if grounded
         private bool m_Grounded;                          // Whether or not the player is grounded.
-        private bool m_FacingRight = true;                // For determining which way the player is currently facing.
+        private bool m_FacingRight = false;                // For determining which way the player is currently facing.
         private bool bounce = false;                      // For determining whether or not the player should bounce.
         public int numLives;                              // How many lives the player has.
         private bool isAlive;                             // If the player is alive.
@@ -60,7 +60,7 @@ namespace UnityStandardAssets._2D
                     }
                 }
 
-                // The player hit the ground and should now switch animations
+                // The player hit the ground
                 else if (colliders[i].gameObject != gameObject)
                 {
                     m_Grounded = true;
@@ -68,9 +68,6 @@ namespace UnityStandardAssets._2D
             }
 
             m_Anim.SetBool("Ground", m_Grounded);
-
-            // Set the vertical animation
-            m_Anim.SetFloat("vSpeed", m_Rigidbody2D.velocity.y);
         }
 
         private void OnCollisionEnter2D(Collision2D coll)
