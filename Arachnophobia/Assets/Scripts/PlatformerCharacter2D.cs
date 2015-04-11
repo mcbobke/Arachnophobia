@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityStandardAssets._2D
@@ -18,6 +19,7 @@ namespace UnityStandardAssets._2D
         private Transform m_GroundCheck;                  // A position marking where to check if the player is grounded.
         private Animator m_Anim;                          // Reference to the player's animator component.
         private Rigidbody2D m_Rigidbody2D;
+        public GameController gc;
 
         private void Awake()
         {
@@ -26,7 +28,6 @@ namespace UnityStandardAssets._2D
             m_Anim = GetComponent<Animator>();
             m_Rigidbody2D = GetComponent<Rigidbody2D>();
             isAlive = true;
-            numLives = 5;
         }
 
 
@@ -34,6 +35,7 @@ namespace UnityStandardAssets._2D
         {
             m_Grounded = false;
             Vector2 vel = m_Rigidbody2D.velocity;
+            List<String> bounceTags = new List<String>{"Spider", "ExplodingSpider", "Web"};
 
             // The player is grounded if a circlecast to the groundcheck position hits anything designated as ground
             // This can be done using layers instead but Sample Assets will not overwrite your project settings.
@@ -41,10 +43,10 @@ namespace UnityStandardAssets._2D
             for (int i = 0; i < colliders.Length; i++)
             {
                 // m_Grounded should already be false at this point because you have to jump to be able to bounce, also have to be falling
-                if (colliders[i].gameObject != gameObject && colliders[i].gameObject.tag == "Spider" && m_Grounded == false && vel.y < 0)
+                if (colliders[i].gameObject != gameObject && bounceTags.Contains(colliders[i].gameObject.tag) && m_Grounded == false && vel.y < 0)
                 {
                     bounce = true;
-                    GetComponent<GameController>().DeactivateSpider(colliders[i].gameObject);
+                    gc.DeactivateSpider(colliders[i].gameObject);
                     colliders[i].gameObject.SetActive(false);
                 }
 
