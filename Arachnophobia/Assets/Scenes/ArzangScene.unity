@@ -99,7 +99,7 @@ GameObject:
   - 61: {fileID: 92380395}
   m_Layer: 0
   m_Name: New Sprite 1
-  m_TagString: Untagged
+  m_TagString: Boundary
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -167,7 +167,7 @@ GameObject:
   - 61: {fileID: 448214557}
   m_Layer: 0
   m_Name: New Sprite 2
-  m_TagString: Untagged
+  m_TagString: Boundary
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -400,11 +400,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1753214579}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0816738a8780d9f42a708f0b21d02984, type: 3}
+  m_Script: {fileID: 11500000, guid: b099fb1d550940544a2b067ad3d65b57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
-  directionChangeRate: .80000000000000004
+  jumpHeight: 5
+  jumpRate: .200000003
 --- !u!1 &1945446066
 GameObject:
   m_ObjectHideFlags: 0
@@ -417,7 +417,7 @@ GameObject:
   - 61: {fileID: 1945446067}
   m_Layer: 0
   m_Name: New Sprite 3
-  m_TagString: Untagged
+  m_TagString: Boundary
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
