@@ -25,7 +25,7 @@ public class SpiderJumpingWalk : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D coll) {
 		if (coll.gameObject.tag == "Boundary") {
 			direction *= -1;
-			Vector2 currentVelocity = new Vector2 (GetComponent<Rigidbody2D> ().velocity);
+			Vector2 currentVelocity = GetComponent<Rigidbody2D> ().velocity;
 			GetComponent<Rigidbody2D> ().AddForce(new Vector2 (currentVelocity.x * direction * 2, 0), ForceMode2D.Impulse);
 		}
 	}
