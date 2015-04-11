@@ -15,7 +15,7 @@ GameObject:
   - 95: {fileID: 9546944}
   m_Layer: 8
   m_Name: SpiderJump
-  m_TagString: Untagged
+  m_TagString: Spider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
