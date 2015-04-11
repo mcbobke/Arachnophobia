@@ -26,7 +26,9 @@ public class SpiderWalkRandom : MonoBehaviour {
 	
 	void OnCollisionEnter2D(Collision2D coll) {
 		if (coll.gameObject.tag == "Boundary") {
-			GetComponent<Rigidbody2D>().velocity.x *= -1;
+            Vector2 tempVec = GetComponent<Rigidbody2D>().velocity;
+			tempVec.x *= -1;
+            GetComponent<Rigidbody2D>().velocity = tempVec;
 		}
 	}
 }
