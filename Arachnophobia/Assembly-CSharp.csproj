@@ -57,6 +57,7 @@
      <Compile Include="Assets\Scripts\SpiderJumpingWalk.cs" />
      <Compile Include="Assets\Scripts\SpiderWalk.cs" />
      <Compile Include="Assets\Scripts\SpiderWalkRandom.cs" />
+     <Compile Include="Assets\Scripts\StartGameTrigger.cs" />
      <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
