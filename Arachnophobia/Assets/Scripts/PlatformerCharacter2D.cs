@@ -20,6 +20,7 @@ namespace UnityStandardAssets._2D
         private Animator m_Anim;                          // Reference to the player's animator component.
         private Rigidbody2D m_Rigidbody2D;
         public GameController gc;
+        private List<String> objTags;
 
         private void Awake()
         {
@@ -28,6 +29,7 @@ namespace UnityStandardAssets._2D
             m_Anim = GetComponent<Animator>();
             m_Rigidbody2D = GetComponent<Rigidbody2D>();
             isAlive = true;
+            objTags = new List<String> { "Spider", "ExplodingSpider", "Web" };
         }
 
 
@@ -35,7 +37,6 @@ namespace UnityStandardAssets._2D
         {
             m_Grounded = false;
             Vector2 vel = m_Rigidbody2D.velocity;
-            List<String> bounceTags = new List<String>{"Spider", "ExplodingSpider", "Web"};
 
             // The player is grounded if a circlecast to the groundcheck position hits anything designated as ground
             // This can be done using layers instead but Sample Assets will not overwrite your project settings.
@@ -43,11 +44,20 @@ namespace UnityStandardAssets._2D
             for (int i = 0; i < colliders.Length; i++)
             {
                 // m_Grounded should already be false at this point because you have to jump to be able to bounce, also have to be falling
-                if (colliders[i].gameObject != gameObject && bounceTags.Contains(colliders[i].gameObject.tag) && m_Grounded == false && vel.y < 0)
+                if (colliders[i].gameObject != gameObject && objTags.Contains(colliders[i].gameObject.tag) && m_Grounded == false && vel.y < 0)
                 {
                     bounce = true;
-                    gc.DeactivateSpider(colliders[i].gameObject);
-                    colliders[i].gameObject.SetActive(false);
+                    
+                    if (colliders[i].gameObject.tag != "Web")
+                    {
+                        gc.DeactivateSpider(colliders[i].gameObject);
+                        colliders[i].gameObject.SetActive(false);
+                    }
+
+                    else
+                    {
+                        Destroy(colliders[i].gameObject);
+                    }
                 }
 
                 // The player hit the ground and should now switch animations
@@ -65,7 +75,7 @@ namespace UnityStandardAssets._2D
 
         private void OnCollisionEnter2D(Collision2D coll)
         {
-            if (coll.gameObject.tag == "Spider")
+            if (objTags.Contains(coll.gameObject.tag) && coll.gameObject.tag != "Web")
             {
                 if (numLives == 1)
                     isAlive = false;
