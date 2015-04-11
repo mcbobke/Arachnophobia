@@ -7,16 +7,20 @@ public class SpiderWalkRandom : MonoBehaviour {
 	public float directionChangeRate = 0.2f;
 	
 	private int direction = 1;
+	private bool facingRight = true;
 	
 	void Start () {
 		if (Random.Range (0.0f, 1.0f) < 0.5) {
 			direction = -1;
+			facingRight = false;
+			Flip ();
 		}
 	}
 	
 	void FixedUpdate () {
 		if (Random.Range (0.0f, 1.0f) <= directionChangeRate) {
 			direction *= -1;
+			Flip ();
 		}
 
 		Vector2 trans = this.transform.position;
@@ -30,5 +34,12 @@ public class SpiderWalkRandom : MonoBehaviour {
 			tempVec.x *= -1;
             GetComponent<Rigidbody2D>().velocity = tempVec;
 		}
+	}
+
+	void Flip(){
+		Vector3 theScale = transform.localScale;
+		theScale.x *= -1;
+		facingRight = !facingRight;
+		transform.localScale = theScale;
 	}
 }
