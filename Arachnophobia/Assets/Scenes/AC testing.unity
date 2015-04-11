@@ -96,7 +96,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 19936733}
   - 114: {fileID: 19936732}
-  - 61: {fileID: 19936734}
   - 114: {fileID: 19936735}
   m_Layer: 0
   m_Name: _Manager
@@ -137,20 +136,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
---- !u!61 &19936734
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 19936731}
-  m_Enabled: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Size: {x: .5, y: .5}
+  m_RootOrder: 1
 --- !u!114 &19936735
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1645,7 +1631,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 0
 --- !u!1 &1529335469
 GameObject:
   m_ObjectHideFlags: 0
@@ -1673,7 +1659,7 @@ Transform:
   m_Children:
   - {fileID: 335560945}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
 --- !u!1 &1687138649
 GameObject:
   m_ObjectHideFlags: 0
@@ -1796,4 +1782,4 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
