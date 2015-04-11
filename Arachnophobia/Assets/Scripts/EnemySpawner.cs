@@ -22,7 +22,7 @@ public class EnemySpawner : MonoBehaviour {
 	int currentTier = 0;						//Keeps track enemy tiers allowable
 	//Spawning Location
 	float xDistance = 6;						//Max distance in x direction from center to spawn
-	float yDistance = 7;						//Starting distance in sky
+	float yDistance = 5;						//Starting distance in sky
 
 	// Use this for initialization
 	void Awake () {
