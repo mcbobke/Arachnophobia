@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Spider
   - Boundary
+  - Web
   layers:
   - Default
   - TransparentFX

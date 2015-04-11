@@ -3,6 +3,7 @@ using System.Collections;
 
 public class GameController : MonoBehaviour
 {
+    public GameObject Web;
     // Use this for initialization
     void Start()
     {
@@ -17,9 +18,11 @@ public class GameController : MonoBehaviour
 
     public void DeactivateSpider(GameObject obj)
     {
-        if (obj.tag == "ExplodingSpider")
+        if (obj.tag == "Spider")
         {
-            // make a web
+            Vector3 pos = obj.transform.position;
+            Debug.Log(pos);
+            Instantiate(Web, new Vector2(pos.x + .6f, pos.y + .6f), new Quaternion(0f, 0f, 0f, 0f));
         }
     }
 }
