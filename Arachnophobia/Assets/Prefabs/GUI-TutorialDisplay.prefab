@@ -290,7 +290,7 @@ MonoBehaviour:
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: "Stephen \"Redshrike\" Challener as graphic artist and William Thompsonj
-    as contributor.\r OpenGameArt.org/content/lpc-spider"
+    as contributor.\r OpenGameArt.org/content/lpc-spider\n\nclker.com/clipart-book-open.html"
 --- !u!114 &11469738
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -529,7 +529,7 @@ RectTransform:
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
   m_AnchoredPosition: {x: 0, y: 50}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 160, y: 50}
   m_Pivot: {x: .5, y: .5}
 --- !u!224 &22462740
 RectTransform:
