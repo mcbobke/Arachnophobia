@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 
 Project("{044C17CA-174B-6AAB-E20E-726117143A70}") = "Arachnophobia", "Assembly-CSharp-firstpass-vs.csproj", "{48FBFF41-D361-5EED-B5B8-92A6B30D477A}"
 EndProject
+Project("{044C17CA-174B-6AAB-E20E-726117143A70}") = "Arachnophobia", "Assembly-CSharp-vs.csproj", "{DD7CA504-F890-2FD2-D324-ECC91DB69762}"
+EndProject
 Project("{044C17CA-174B-6AAB-E20E-726117143A70}") = "Arachnophobia", "Assembly-CSharp-Editor-vs.csproj", "{F8D465EF-C723-69BF-DD56-C7F9A3BF8EC3}"
 EndProject
 Global
@@ -15,6 +17,10 @@ Global
 		{48FBFF41-D361-5EED-B5B8-92A6B30D477A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{48FBFF41-D361-5EED-B5B8-92A6B30D477A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{48FBFF41-D361-5EED-B5B8-92A6B30D477A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD7CA504-F890-2FD2-D324-ECC91DB69762}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD7CA504-F890-2FD2-D324-ECC91DB69762}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD7CA504-F890-2FD2-D324-ECC91DB69762}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD7CA504-F890-2FD2-D324-ECC91DB69762}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F8D465EF-C723-69BF-DD56-C7F9A3BF8EC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F8D465EF-C723-69BF-DD56-C7F9A3BF8EC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F8D465EF-C723-69BF-DD56-C7F9A3BF8EC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -23,7 +29,7 @@ Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-		GlobalSection(MonoDevelopProperties) = preSolution
+											GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Assembly-CSharp.csproj
 		Policies = $0
 		$0.TextStylePolicy = $1
