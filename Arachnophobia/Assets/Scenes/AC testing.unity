@@ -117,7 +117,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EnemyHeir: {fileID: 1871525345}
   EnemyTypes:
-  - {fileID: 152522, guid: 15fc62c04178bb842ac74fc68bb3cbe7, type: 2}
+  - {fileID: 115488, guid: a1a58b37023b7b947980a545f2a99a96, type: 2}
   - {fileID: 198302, guid: fc557a3766bbd2840a985327b6c82995, type: 2}
   SpawnAmount: fa000000fa000000
   TierTransition: 100
