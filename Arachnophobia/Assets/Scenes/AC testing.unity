@@ -117,10 +117,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EnemyHeir: {fileID: 1871525345}
   EnemyTypes:
-  - {fileID: 115488, guid: a1a58b37023b7b947980a545f2a99a96, type: 2}
-  - {fileID: 198302, guid: fc557a3766bbd2840a985327b6c82995, type: 2}
+  - {fileID: 169810, guid: cc621813ac00c9741a9a562c0a645017, type: 2}
+  - {fileID: 149656, guid: acb5b453705516e46b7a5a3bec396cac, type: 2}
   SpawnAmount: fa000000fa000000
-  TierTransition: 100
+  TierTransition: 0
   MaxEnemies: 500
   SpawnRate: 1
   active: 0
