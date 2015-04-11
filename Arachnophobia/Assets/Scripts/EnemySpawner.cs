@@ -47,7 +47,7 @@ public class EnemySpawner : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (KillCount > TierTransition){
+		if (KillCount >= TierTransition){
 			TierTransition += TierTransition;
 			EnemyTierProgression();
 		}
