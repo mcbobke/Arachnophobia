@@ -25,7 +25,7 @@ public class EnemySpawner : MonoBehaviour {
 	float yDistance = 5;						//Starting distance in sky
 
 	// Use this for initialization
-	void Awake () {
+	void Start () {
 		int eTier = 0;
 		int currentTierCount = 0;
 		maxIndex = SpawnAmount[0];
