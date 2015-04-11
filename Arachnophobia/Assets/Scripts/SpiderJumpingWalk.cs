@@ -9,7 +9,7 @@ public class SpiderJumpingWalk : MonoBehaviour {
 	private int direction = 1;
 	
 	void Start () {
-		if (Random.Range (0.0f, 1.0f) < 0.5) {
+		if (Random.Range (0.0f, 1.0f) < 0.5f) {
 			direction = -1;
 		}
 	}
@@ -26,7 +26,7 @@ public class SpiderJumpingWalk : MonoBehaviour {
 		if (coll.gameObject.tag == "Boundary") {
 			direction *= -1;
 			Vector2 currentVelocity = GetComponent<Rigidbody2D> ().velocity;
-			GetComponent<Rigidbody2D> ().AddForce(new Vector2 (currentVelocity.x * direction * 2, 0), ForceMode2D.Impulse);
+			GetComponent<Rigidbody2D> ().AddForce(new Vector2 (currentVelocity.x * -1 * 2, 0), ForceMode2D.Impulse);
 		}
 	}
 }
