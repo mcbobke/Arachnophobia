@@ -31,6 +31,21 @@ public class TallSpiderWalk : MonoBehaviour {
             direction *= -1;
             Flip();
         }
+
+        else if (coll.gameObject.tag == "Ground")
+        {
+            GetComponent<Rigidbody2D>().gravityScale = 0;
+
+            BoxCollider2D[] allCollidersOnObject = GetComponentsInChildren<BoxCollider2D>(); // Get ALL BoxCollider2D's that are attached to this tall spider as well as it's child objects
+
+            foreach(BoxCollider2D boxcoll in allCollidersOnObject)
+            {
+                if (boxcoll.gameObject.transform.parent != null) // This means the gameobject that this collider is attached to has a parent, so it must be the child
+                {
+                    boxcoll.enabled = false;
+                }
+            }
+        }
     }
 
     void Flip()
