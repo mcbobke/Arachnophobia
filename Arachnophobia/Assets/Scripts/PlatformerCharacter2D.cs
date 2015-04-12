@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace UnityStandardAssets._2D
 {
@@ -27,6 +28,7 @@ namespace UnityStandardAssets._2D
         public EnemySpawner es;
         private List<String> objTags;
         private Color prevColor;
+        public GameObject healthText;
 
         private void Awake()
         {
@@ -41,6 +43,10 @@ namespace UnityStandardAssets._2D
             flashRate = 0.2f;
         }
 
+        private void Update()
+        {
+            healthText.GetComponent<Text>().text = numLives.ToString();
+        }
 
         private void FixedUpdate()
         {
@@ -60,21 +66,11 @@ namespace UnityStandardAssets._2D
 					//CHANGED FOR EXPLODING - Arielle
                     if (colliders[i].gameObject.tag != "Web")
                     {
-						if(colliders[i].gameObject.tag != "ExplodeSpider")
-                        {
-							es.active--;
-							es.DeactivateSpider(colliders[i].gameObject);
-							colliders[i].gameObject.SetActive(false);
-
-							Debug.Log("NOT");
-						}
-
-						else
-                        {
-							colliders[i].gameObject.GetComponent<SpiderExplode>().targetPlayer = false;
-							colliders[i].gameObject.GetComponent<SpiderExplode>().Explode();
-						}
-
+						if(colliders[i].gameObject.tag == "ExplodeSpider")
+							colliders[i].gameObject.GetComponent<SpiderExplode>().Reset();
+						es.active--;
+						es.DeactivateSpider(colliders[i].gameObject);
+						colliders[i].gameObject.SetActive(false);
 						es.KillCount++;
                     }
 
