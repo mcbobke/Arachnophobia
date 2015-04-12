@@ -72,6 +72,13 @@ public class EnemySpawner : MonoBehaviour {
 				float y_pos = yDistance;
 				float z_pos = SpawnList[spawnIndex].transform.position.z;
 				SpawnList[spawnIndex].transform.position = new Vector3(x_pos,y_pos,z_pos);      // Gives it a randomized position in x-space
+                if (SpawnList[spawnIndex].tag == "SpiderTall")                                  // This if/for loop reenables disabled colliders in tall spiders that were previously spawned
+                {
+                    SpawnList[spawnIndex].GetComponent<Rigidbody2D>().gravityScale = 1;
+                    BoxCollider2D[] colliders = SpawnList[spawnIndex].GetComponentsInChildren<BoxCollider2D>();
+                    foreach (BoxCollider2D boxcoll in colliders)
+                        boxcoll.enabled = true;
+                }
 				SpawnList[spawnIndex].SetActive(true);
 				spawned++;
 				active++;
