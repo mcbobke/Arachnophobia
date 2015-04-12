@@ -251,6 +251,48 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 6.4000001, y: 2.5}
+--- !u!1001 &232572469
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 491060, guid: a5911a004014fa14aa79ef15a0376652, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 491060, guid: a5911a004014fa14aa79ef15a0376652, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 491060, guid: a5911a004014fa14aa79ef15a0376652, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 491060, guid: a5911a004014fa14aa79ef15a0376652, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 491060, guid: a5911a004014fa14aa79ef15a0376652, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 491060, guid: a5911a004014fa14aa79ef15a0376652, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 491060, guid: a5911a004014fa14aa79ef15a0376652, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 491060, guid: a5911a004014fa14aa79ef15a0376652, type: 2}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: a5911a004014fa14aa79ef15a0376652, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &257985112
 GameObject:
   m_ObjectHideFlags: 0
@@ -263,7 +305,7 @@ GameObject:
   - 114: {fileID: 257985115}
   m_Layer: 0
   m_Name: _GameController
-  m_TagString: Untagged
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -306,14 +348,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EnemyHeir: {fileID: 334649011}
   EnemyTypes:
-  - {fileID: 169810, guid: cc621813ac00c9741a9a562c0a645017, type: 2}
-  - {fileID: 149656, guid: acb5b453705516e46b7a5a3bec396cac, type: 2}
-  - {fileID: 193520, guid: 3a197e95392680846954ff7713af9790, type: 2}
   - {fileID: 177476, guid: 869451daa5e866749baea8b13784ae0e, type: 2}
-  - {fileID: 101908, guid: 6a3c90aa92feb0b448cc119db0adfbfd, type: 2}
+  - {fileID: 149656, guid: acb5b453705516e46b7a5a3bec396cac, type: 2}
   web: {fileID: 159936, guid: f2b1750653b7cd842b7d46deab09dd2c, type: 2}
-  explosion: {fileID: 0}
-  SpawnAmount: 6400000064000000640000006400000064000000
+  explosion: {fileID: 156772, guid: a5911a004014fa14aa79ef15a0376652, type: 2}
+  SpawnAmount: fa000000fa000000
   TierTransition: 1
   MaxEnemies: 500
   SpawnRate: 1
