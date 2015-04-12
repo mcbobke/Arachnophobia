@@ -29,7 +29,7 @@ namespace UnityStandardAssets._2D
             m_Anim = GetComponent<Animator>();
             m_Rigidbody2D = GetComponent<Rigidbody2D>();
             isAlive = true;
-            objTags = new List<String> { "Spider", "ExplodingSpider", "Web" };
+            objTags = new List<String> { "Spider", "ExplodingSpider", "Web", "WebSpider" };
         }
 
 
