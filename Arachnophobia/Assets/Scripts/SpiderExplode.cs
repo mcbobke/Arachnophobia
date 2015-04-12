@@ -13,15 +13,17 @@ public class SpiderExplode : MonoBehaviour {
 	private Color prevColor;
 	private int colorSwaps;
 	private GameObject explosion;
+	private GameObject helper;
 	
 	public bool exTriggered = false;
 	public bool targetPlayer;
-	private bool exploding;
+	public bool exploding;
 
 	private List<GameObject> inBlastZone;
 
 	void Start () {
 		explosion = transform.GetChild(0).gameObject;
+		helper = transform.GetChild(1).gameObject;
 		Reset();
 	}
 	
@@ -39,6 +41,7 @@ public class SpiderExplode : MonoBehaviour {
 	}
 
 	void PrepareToExplode () {
+		helper.SetActive(false);
 		GetComponent<SpiderWalkRandom>().enabled = false;
 		elapsedTime += Time.deltaTime;
 
@@ -68,6 +71,7 @@ public class SpiderExplode : MonoBehaviour {
 	IEnumerator Explode () {
 		explosion.SetActive(true);
 		exploding = true;
+		helper.SetActive(true);
 		yield return new WaitForSeconds(1f);
 		Reset();
 		gameObject.SetActive(false);
