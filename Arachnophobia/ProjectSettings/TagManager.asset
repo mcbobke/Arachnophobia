@@ -15,6 +15,7 @@ TagManager:
   - EnemyParent
   - Boss
   - Boss Arm
+  - SpiderTall
   layers:
   - Default
   - TransparentFX
