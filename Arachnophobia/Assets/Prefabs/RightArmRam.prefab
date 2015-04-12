@@ -30,7 +30,7 @@ GameObject:
   - 114: {fileID: 11468444}
   m_Layer: 8
   m_Name: RightArmRam
-  m_TagString: Boss
+  m_TagString: Boss Arm
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

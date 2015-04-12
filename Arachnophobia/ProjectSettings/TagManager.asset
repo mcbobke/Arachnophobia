@@ -14,6 +14,7 @@ TagManager:
   - Ground
   - EnemyParent
   - Boss
+  - Boss Arm
   layers:
   - Default
   - TransparentFX
