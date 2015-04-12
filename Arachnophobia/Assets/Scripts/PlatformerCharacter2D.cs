@@ -50,11 +50,14 @@ namespace UnityStandardAssets._2D
                     
                     if (colliders[i].gameObject.tag != "Web")
                     {
-                        gc.GetComponent<EnemySpawner>().KillCount++;
-                        gc.GetComponent<EnemySpawner>().active--;
-                        gc.DeactivateSpider(colliders[i].gameObject);
-                        colliders[i].gameObject.SetActive(false);
-						if(colliders[i].gameObject.name == "SpiderExplode(Clone)")
+						gc.GetComponent<EnemySpawner>().KillCount++;
+						Debug.Log(colliders[i].gameObject.tag);
+						if(colliders[i].gameObject.tag != "ExplodeSpider"){
+							gc.GetComponent<EnemySpawner>().active--;
+							gc.DeactivateSpider(colliders[i].gameObject);
+							colliders[i].gameObject.SetActive(false);
+						}
+						else
 							colliders[i].gameObject.GetComponent<SpiderExplode>().targetPlayer = false;
                     }
 
