@@ -6,6 +6,7 @@ public class StartGameTrigger : MonoBehaviour {
 	//Deactivates for game start
 	public GameObject GameController;
 	public GameObject PreGame;
+    public GameObject Title;
 
 	// Use this for initialization
 	void Awake () {
@@ -18,6 +19,7 @@ public class StartGameTrigger : MonoBehaviour {
 			GameController.SetActive(true);
 			PreGame.SetActive(false);
 			gameObject.SetActive(false);
+            Title.SetActive(false);
 		}
 	}
 

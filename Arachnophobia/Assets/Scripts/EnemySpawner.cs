@@ -8,6 +8,7 @@ public class EnemySpawner : MonoBehaviour {
 	//Enemys to be spawned
 	public GameObject[] EnemyTypes;				//Set enemy types to be spawned by spawner
 	GameObject[] SpawnList;						//List of enemies to spawn
+    public GameObject web;                      //Not really an enemy, but should be spawned anyway
 
 	//Spawning Handler
 	public int[] SpawnAmount;					//Amount of enemies available for each tier
@@ -20,6 +21,7 @@ public class EnemySpawner : MonoBehaviour {
 
 	int maxIndex;								//For accessing higher tier of enemies
 	int currentTier = 0;						//Keeps track enemy tiers allowable
+
 	//Spawning Location
 	float xDistance = 6;						//Max distance in x direction from center to spawn
 	float yDistance = 5;						//Starting distance in sky
@@ -76,4 +78,13 @@ public class EnemySpawner : MonoBehaviour {
 		else if(SpawnRate <100)
 			SpawnRate++;
 	}
+
+    public void DeactivateSpider(GameObject obj)
+    {
+        if (obj.tag == "WebSpider")
+        {
+            Vector3 pos = obj.transform.position;
+            Instantiate(web, new Vector2(pos.x, pos.y + .3f), new Quaternion(0f, 0f, 0f, 0f));
+        }
+    }
 }
