@@ -66,7 +66,7 @@ public class SpiderExplode : MonoBehaviour {
 		GetComponent<SpiderWalkRandom>().enabled = true;
 	}
 
-	IEnumerator Explode () {
+	public IEnumerator Explode () {
 		explosion.SetActive(true);
 		exploding = true;
 		helper.SetActive(true);
