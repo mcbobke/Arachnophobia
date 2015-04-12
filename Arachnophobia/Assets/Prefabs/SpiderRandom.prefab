@@ -89,7 +89,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2.5
-  directionChangeRate: .200000003
+  directionChangeRate: .0199999996
 --- !u!212 &21202840
 SpriteRenderer:
   m_ObjectHideFlags: 1
