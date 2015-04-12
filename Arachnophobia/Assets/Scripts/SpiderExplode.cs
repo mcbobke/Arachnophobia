@@ -16,6 +16,7 @@ public class SpiderExplode : MonoBehaviour {
 	public bool exTriggered = false;
 	public bool targetPlayer;
 	public bool exploding;
+	public bool inRange = false;
 
 	private List<GameObject> inBlastZone;
 
@@ -55,6 +56,7 @@ public class SpiderExplode : MonoBehaviour {
 	}
 
 	void Reset(){
+		inRange = false;
 		targetPlayer = true;
 		exploding = false;
 		explosion.SetActive(false);
@@ -67,6 +69,8 @@ public class SpiderExplode : MonoBehaviour {
 	}
 
 	public IEnumerator Explode () {
+		if(inRange)
+			Debug.Log("Damage Player");
 		explosion.SetActive(true);
 		exploding = true;
 		helper.SetActive(true);
