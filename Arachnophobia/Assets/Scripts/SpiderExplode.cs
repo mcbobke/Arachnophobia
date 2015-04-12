@@ -12,15 +12,15 @@ public class SpiderExplode : MonoBehaviour {
 	private int colorSwaps;
 	private GameObject explosion;
 	private GameObject helper;
+	private GameObject player;
 	
 	public bool exTriggered = false;
 	public bool targetPlayer;
 	public bool exploding;
 	public bool inRange = false;
 
-	private List<GameObject> inBlastZone;
-
 	void Start () {
+		player = GameObject.FindGameObjectWithTag("Player");
 		explosion = transform.GetChild(0).gameObject;
 		helper = transform.GetChild(1).gameObject;
 		Reset();
@@ -69,12 +69,13 @@ public class SpiderExplode : MonoBehaviour {
 	}
 
 	public IEnumerator Explode () {
-		if(inRange)
-			Debug.Log("Damage Player");
 		explosion.SetActive(true);
 		exploding = true;
 		helper.SetActive(true);
 		yield return new WaitForSeconds(1f);
+		if(inRange){
+			player.SendMessage("TakeDamage");
+		}
 		Reset();
 		gameObject.SetActive(false);
 	}
