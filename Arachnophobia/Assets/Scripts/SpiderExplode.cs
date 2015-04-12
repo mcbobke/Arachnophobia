@@ -12,34 +12,26 @@ public class SpiderExplode : MonoBehaviour {
 	private float elapsedTime;
 	private Color prevColor;
 	private int colorSwaps;
-	private ParticleSystem explosion;
+	private GameObject explosion;
+	private bool exTriggered = false;
 
 	private List<GameObject> inBlastZone;
-	
+
 	void Start () {
-		prevColor =  new Color ( 255, 255, 255, 0.3f);
+		explosion = transform.GetChild(0).gameObject;
+		Reset();
+	}
 
-		explosion = GetComponent<ParticleSystem> ();
-		explosion.Pause ();
-
-		elapsedTime = 0.0f;
-		colorSwaps = 0;
+	void OnTriggerEnter2D(Collider2D other){
+		if(other.tag == "Player"){
+			exTriggered = true;
+		}
 	}
 
 	void FixedUpdate () {
-		float distance = Mathf.Sqrt (
-			Mathf.Pow (
-				Mathf.Abs (this.transform.position.x - player.transform.position.x), 2) + 
-			Mathf.Pow (
-				Mathf.Abs (this.transform.position.y - player.transform.position.y), 2));
-
-		if (distance <= triggerDistance) {
-			GetComponent<SpiderWalk>().enabled = false;
-			PrepareToExplode ();
-		} else {
-			GetComponent<SpiderWalk>().enabled = true;
-			elapsedTime = 0.0f;
-		}
+		GetComponent<SpiderWalkRandom>().enabled = true;
+		if(exTriggered)
+			PrepareToExplode();
 	}
 
 	void SwapColors () {
@@ -49,6 +41,7 @@ public class SpiderExplode : MonoBehaviour {
 	}
 
 	void PrepareToExplode () {
+		GetComponent<SpiderWalkRandom>().enabled = false;
 		elapsedTime += Time.deltaTime;
 
 		if (elapsedTime >= flashRate) {
@@ -58,17 +51,25 @@ public class SpiderExplode : MonoBehaviour {
 		}
 
 		if (colorSwaps / 2 >= flashesBeforeExploding) {
-			Explode ();
+			StartCoroutine(Explode());
 		}
 	}
 
-	void Explode () {
-		GetComponent<SpriteRenderer> ().material.color = new Color (0, 0, 0, 0.0f);
-		explosion.Play();
+	void Reset(){
+		explosion.SetActive(false);
+		prevColor =  new Color ( 255, 255, 255, 0.3f);
+		colorSwaps = 0;
+		elapsedTime = 0.0f;
+		exTriggered = false;
+		GetComponent<SpriteRenderer> ().material.color = new Color (.7f, .7f, .7f, 1f);
+		GetComponent<SpiderWalkRandom>().enabled = true;
 	}
 
-	void OnTriggerEnter (Collider coll) {
-
+	IEnumerator Explode () {
+		explosion.SetActive(true);
+		yield return new WaitForSeconds(1f);
+		Reset();
+		gameObject.SetActive(false);
 	}
 }
 

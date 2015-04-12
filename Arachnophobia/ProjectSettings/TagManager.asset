@@ -7,6 +7,8 @@ TagManager:
   - Spider
   - Boundary
   - Web
+  - WebSpider
+  - ExplodeSpider
   layers:
   - Default
   - TransparentFX
@@ -17,7 +19,7 @@ TagManager:
   - 
   - 
   - Enemy
-  - 
+  - Player
   - 
   - 
   - 

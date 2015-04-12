@@ -29,7 +29,7 @@ namespace UnityStandardAssets._2D
             m_Anim = GetComponent<Animator>();
             m_Rigidbody2D = GetComponent<Rigidbody2D>();
             isAlive = true;
-            objTags = new List<String> { "Spider", "ExplodingSpider", "Web" };
+            objTags = new List<String> { "Spider", "ExplodeSpider", "Web", "WebSpider" };
         }
 
 
@@ -50,6 +50,8 @@ namespace UnityStandardAssets._2D
                     
                     if (colliders[i].gameObject.tag != "Web")
                     {
+                        gc.GetComponent<EnemySpawner>().KillCount++;
+                        gc.GetComponent<EnemySpawner>().active--;
                         gc.DeactivateSpider(colliders[i].gameObject);
                         colliders[i].gameObject.SetActive(false);
                     }
