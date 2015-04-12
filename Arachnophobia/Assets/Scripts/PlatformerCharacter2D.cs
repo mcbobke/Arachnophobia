@@ -8,7 +8,7 @@ namespace UnityStandardAssets._2D
     public class PlatformerCharacter2D : MonoBehaviour
     {
         private float m_MaxSpeed = 5f;                   // The fastest the player can travel in the x axis.
-        private float m_JumpForce = 400f;                 // Amount of force added when the player jumps.
+        private float m_JumpForce = 500f;                 // Amount of force added when the player jumps.
         private bool m_AirControl = true;                 // Whether or not a player can steer while jumping.
         const float k_GroundedRadius = .2f;               // Radius of the overlap circle to determine if grounded.
         private bool m_Grounded;                          // Whether or not the player is grounded.
@@ -37,7 +37,7 @@ namespace UnityStandardAssets._2D
             m_Anim = GetComponent<Animator>();
             m_Rigidbody2D = GetComponent<Rigidbody2D>();
             isAlive = true;
-            objTags = new List<String> { "Spider", "ExplodeSpider", "Web", "WebSpider" };
+            objTags = new List<String> { "Spider", "ExplodeSpider", "Web", "WebSpider", "SpiderTall", "Boss Arm" };
             prevColor = new Color(255, 255, 255, 0.3f);
             isInvincible = false;
             flashRate = 0.2f;
@@ -64,7 +64,10 @@ namespace UnityStandardAssets._2D
                     bounce = true;
                     
 					//CHANGED FOR EXPLODING - Arielle
-                    if (colliders[i].gameObject.tag != "Web")
+					if(colliders[i].gameObject.tag == "Boss Arm"){
+
+					}
+                    else if (colliders[i].gameObject.tag != "Web")
                     {
 						if(colliders[i].gameObject.tag == "ExplodeSpider")
 							colliders[i].gameObject.GetComponent<SpiderExplode>().Reset();
@@ -73,7 +76,6 @@ namespace UnityStandardAssets._2D
 						colliders[i].gameObject.SetActive(false);
 						es.KillCount++;
                     }
-
                     else
                     {
                         Destroy(colliders[i].gameObject);
@@ -81,7 +83,7 @@ namespace UnityStandardAssets._2D
                 }
 
                 // The player hit the ground
-                else if (colliders[i].gameObject != gameObject)
+                else if (colliders[i].gameObject != gameObject && colliders[i].gameObject.tag == "Ground")
                 {
                     m_Grounded = true;
                 }
@@ -97,14 +99,9 @@ namespace UnityStandardAssets._2D
         {
             if (objTags.Contains(coll.gameObject.tag) && coll.gameObject.tag != "Web")
             {
-                if (!isInvincible)
+                if (!isInvincible && coll.gameObject.tag != "Boss Arm")
                 {
-                    if (coll.gameObject.tag == "TallSpiderHelper")
-                    {
-                        Physics2D.IgnoreCollision(GetComponent<Collider2D>(), coll.gameObject.GetComponent<Collider2D>());
-                    }
-
-                    else if (numLives == 1)
+                    if (numLives == 1)
                         isAlive = false;
 
                     else
@@ -118,7 +115,7 @@ namespace UnityStandardAssets._2D
                     Physics2D.IgnoreCollision(GetComponent<Collider2D>(), coll.gameObject.GetComponent<Collider2D>());
                 }
 
-                else
+                else if (coll.gameObject.tag != "Boss Arm")
                 {
                     coll.gameObject.SetActive(false);
                     Physics2D.IgnoreCollision(GetComponent<Collider2D>(), coll.gameObject.GetComponent<Collider2D>());

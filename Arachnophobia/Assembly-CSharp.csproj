@@ -46,6 +46,8 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\ArmDamageEnd.cs" />
+     <Compile Include="Assets\ArmRamController.cs" />
      <Compile Include="Assets\Scripts\BookController.cs" />
      <Compile Include="Assets\Scripts\BossController.cs" />
      <Compile Include="Assets\Scripts\BossSpawnWebBall.cs" />
@@ -54,7 +56,6 @@
      <Compile Include="Assets\Scripts\DisplayLives.cs" />
      <Compile Include="Assets\Scripts\EnemySpawner.cs" />
      <Compile Include="Assets\Scripts\ExplosionHelper.cs" />
-     <Compile Include="Assets\Scripts\HealthCounter.cs" />
      <Compile Include="Assets\Scripts\LoadScene.cs" />
      <Compile Include="Assets\Scripts\PauseController.cs" />
      <Compile Include="Assets\Scripts\Platformer2DUserControl.cs" />
@@ -69,6 +70,7 @@
      <Compile Include="Assets\Scripts\StartGameTrigger.cs" />
      <Compile Include="Assets\Scripts\TallSpiderWalk.cs" />
      <Compile Include="Assets\Scripts\WebBall.cs" />
+     <Compile Include="Assets\WeakSpot.cs" />
      <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>

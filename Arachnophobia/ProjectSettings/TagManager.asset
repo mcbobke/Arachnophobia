@@ -13,6 +13,9 @@ TagManager:
   - TallSpiderHelper
   - Ground
   - EnemyParent
+  - Boss
+  - Boss Arm
+  - Weak Spot
   layers:
   - Default
   - TransparentFX
@@ -26,7 +29,7 @@ TagManager:
   - Player
   - Helper
   - Boundary
-  - 
+  - Boss Helper
   - 
   - 
   - 
