@@ -37,7 +37,7 @@ namespace UnityStandardAssets._2D
             m_Anim = GetComponent<Animator>();
             m_Rigidbody2D = GetComponent<Rigidbody2D>();
             isAlive = true;
-            objTags = new List<String> { "Spider", "ExplodeSpider", "Web", "WebSpider" };
+            objTags = new List<String> { "Spider", "ExplodeSpider", "Web", "WebSpider","Boss Arm" };
             prevColor = new Color(255, 255, 255, 0.3f);
             isInvincible = false;
             flashRate = 0.2f;
@@ -64,7 +64,10 @@ namespace UnityStandardAssets._2D
                     bounce = true;
                     
 					//CHANGED FOR EXPLODING - Arielle
-                    if (colliders[i].gameObject.tag != "Web")
+					if(colliders[i].gameObject.tag == "Boss Arm"){
+
+					}
+                    else if (colliders[i].gameObject.tag != "Web")
                     {
 						if(colliders[i].gameObject.tag == "ExplodeSpider")
 							colliders[i].gameObject.GetComponent<SpiderExplode>().Reset();
@@ -73,7 +76,6 @@ namespace UnityStandardAssets._2D
 						colliders[i].gameObject.SetActive(false);
 						es.KillCount++;
                     }
-
                     else
                     {
                         Destroy(colliders[i].gameObject);
@@ -97,7 +99,7 @@ namespace UnityStandardAssets._2D
         {
             if (objTags.Contains(coll.gameObject.tag) && coll.gameObject.tag != "Web")
             {
-                if (!isInvincible)
+                if (!isInvincible && coll.gameObject.tag != "Boss Arm")
                 {
                     if (numLives == 1)
                         isAlive = false;
@@ -113,7 +115,7 @@ namespace UnityStandardAssets._2D
                     Physics2D.IgnoreCollision(GetComponent<Collider2D>(), coll.gameObject.GetComponent<Collider2D>());
                 }
 
-                else
+                else if (coll.gameObject.tag != "Boss Arm")
                 {
                     coll.gameObject.SetActive(false);
                     Physics2D.IgnoreCollision(GetComponent<Collider2D>(), coll.gameObject.GetComponent<Collider2D>());
