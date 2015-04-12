@@ -10,6 +10,8 @@ TagManager:
   - WebSpider
   - ExplodeSpider
   - ExplosionHelper
+  - TallSpiderHelper
+  - Ground
   layers:
   - Default
   - TransparentFX
