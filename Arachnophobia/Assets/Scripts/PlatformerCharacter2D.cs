@@ -48,24 +48,21 @@ namespace UnityStandardAssets._2D
                 {
                     bounce = true;
                     
+					//CHANGED FOR EXPLODING - Arielle
                     if (colliders[i].gameObject.tag != "Web")
                     {
-						gc.GetComponent<EnemySpawner>().KillCount++;
-						Debug.Log(colliders[i].gameObject.tag);
 						if(colliders[i].gameObject.tag != "ExplodeSpider"){
 							gc.GetComponent<EnemySpawner>().active--;
 							gc.DeactivateSpider(colliders[i].gameObject);
 							colliders[i].gameObject.SetActive(false);
+							Debug.Log("NOT");
 						}
-						else
+						else{
 							colliders[i].gameObject.GetComponent<SpiderExplode>().targetPlayer = false;
+							colliders[i].gameObject.GetComponent<SpiderExplode>().Explode();
+						}
+						gc.GetComponent<EnemySpawner>().KillCount++;
                     }
-
-                    else if (colliders[i].gameObject.tag == "ExplosionHelper")
-                    {
-                        // Don't do anything
-                    }
-
                     else
                     {
                         Destroy(colliders[i].gameObject);
