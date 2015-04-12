@@ -28,7 +28,7 @@ public class SpiderExplode : MonoBehaviour {
 	
 
 	void FixedUpdate () {
-		GetComponent<SpiderWalkRandom>().enabled = true;
+		GetComponent<SpiderWalk>().enabled = true;
 		if(exTriggered)
 			PrepareToExplode();
 	}
@@ -41,7 +41,7 @@ public class SpiderExplode : MonoBehaviour {
 
 	void PrepareToExplode () {
 		helper.SetActive(false);
-		GetComponent<SpiderWalkRandom>().enabled = false;
+		GetComponent<SpiderWalk>().enabled = false;
 		elapsedTime += Time.deltaTime;
 
 		if (elapsedTime >= flashRate) {
@@ -65,7 +65,7 @@ public class SpiderExplode : MonoBehaviour {
 		elapsedTime = 0.0f;
 		exTriggered = false;
 		GetComponent<SpriteRenderer> ().material.color = new Color (.7f, .7f, .7f, 1f);
-		GetComponent<SpiderWalkRandom>().enabled = true;
+		GetComponent<SpiderWalk>().enabled = true;
 	}
 
 	public IEnumerator Explode () {

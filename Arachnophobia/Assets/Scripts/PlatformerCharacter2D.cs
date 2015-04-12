@@ -8,7 +8,7 @@ namespace UnityStandardAssets._2D
     public class PlatformerCharacter2D : MonoBehaviour
     {
         private float m_MaxSpeed = 5f;                   // The fastest the player can travel in the x axis.
-        private float m_JumpForce = 400f;                 // Amount of force added when the player jumps.
+        private float m_JumpForce = 500f;                 // Amount of force added when the player jumps.
         private bool m_AirControl = true;                 // Whether or not a player can steer while jumping.
         const float k_GroundedRadius = .2f;               // Radius of the overlap circle to determine if grounded.
         private bool m_Grounded;                          // Whether or not the player is grounded.

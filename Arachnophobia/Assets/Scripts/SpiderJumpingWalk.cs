@@ -3,7 +3,7 @@ using System.Collections;
 
 public class SpiderJumpingWalk : MonoBehaviour {
 
-	public float jumpHeight = 5.0f;
+	public float jumpHeight = 8.0f;
 	public float jumpRate = 0.2f;
 
 	private int direction = 1;
