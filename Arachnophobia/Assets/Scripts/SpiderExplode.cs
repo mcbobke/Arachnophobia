@@ -15,7 +15,7 @@ public class SpiderExplode : MonoBehaviour {
 	private GameObject explosion;
 	
 	public bool exTriggered = false;
-	private bool targetPlayer;
+	public bool targetPlayer;
 	private bool exploding;
 
 	private List<GameObject> inBlastZone;
@@ -73,10 +73,6 @@ public class SpiderExplode : MonoBehaviour {
 		gameObject.SetActive(false);
 	}
 
-	void SwitchTarget(){
-		targetPlayer = false;
-	}
-	
 }
 
 
