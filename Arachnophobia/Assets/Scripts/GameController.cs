@@ -10,7 +10,6 @@ public class GameController : MonoBehaviour
         if (obj.tag == "WebSpider")
         {
             Vector3 pos = obj.transform.position;
-            Debug.Log(pos);
             Instantiate(Web, new Vector2(pos.x, pos.y + .3f), new Quaternion(0f, 0f, 0f, 0f));
         }
     }

@@ -6,7 +6,7 @@ namespace UnityStandardAssets._2D
 {
     public class PlatformerCharacter2D : MonoBehaviour
     {
-        private float m_MaxSpeed = 10f;                   // The fastest the player can travel in the x axis.
+        private float m_MaxSpeed = 5f;                   // The fastest the player can travel in the x axis.
         private float m_JumpForce = 400f;                 // Amount of force added when the player jumps.
         private bool m_AirControl = true;                 // Whether or not a player can steer while jumping.
         const float k_GroundedRadius = .2f;               // Radius of the overlap circle to determine if grounded
@@ -89,11 +89,16 @@ namespace UnityStandardAssets._2D
                 if (numLives == 1)
                     isAlive = false;
                 else
+                {
                     --numLives;
+                    coll.gameObject.SetActive(false);
+                }
+
+                Physics2D.IgnoreCollision(GetComponent<Collider2D>(), coll.gameObject.GetComponent<Collider2D>());
             }
 
-            Debug.Log(numLives);
-            Debug.Log(isAlive);
+            //Debug.Log(numLives);
+            //Debug.Log(isAlive);
         }
 
         public void Move(float move, bool jump)
