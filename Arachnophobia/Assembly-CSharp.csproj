@@ -50,7 +50,7 @@
      <Compile Include="Assets\PlayerExplode.cs" />
      <Compile Include="Assets\SJWalk.cs" />
      <Compile Include="Assets\Scripts\BookController.cs" />
-     <Compile Include="Assets\Scripts\BossSpawnWebBall.cs" />
+     <Compile Include="Assets\Scripts\BossController.cs" />
      <Compile Include="Assets\Scripts\CameraController.cs" />
      <Compile Include="Assets\Scripts\DisplayKills.cs" />
      <Compile Include="Assets\Scripts\DisplayLives.cs" />
