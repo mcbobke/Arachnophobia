@@ -54,6 +54,9 @@ namespace UnityStandardAssets._2D
                         gc.GetComponent<EnemySpawner>().active--;
                         gc.DeactivateSpider(colliders[i].gameObject);
                         colliders[i].gameObject.SetActive(false);
+						if(colliders[i].gameObject.name == "SpiderExplode(Clone)")
+							Debug.Log("Moo");
+							//colliders[i].gameObject.SendMessage("");
                     }
 
                     else if (colliders[i].gameObject.tag == "ExplosionHelper")

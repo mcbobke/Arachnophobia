@@ -124,7 +124,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 440324, guid: a2e0135b3e7289241ba78a69a4b77ce2, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 160608, guid: a2e0135b3e7289241ba78a69a4b77ce2, type: 2}
       propertyPath: m_Name
@@ -163,7 +163,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EnemyHeir: {fileID: 1871525345}
   EnemyTypes:
-  - {fileID: 198356, guid: fdfa77a69947d224bb3d1ad47e32b8cd, type: 2}
+  - {fileID: 177476, guid: 869451daa5e866749baea8b13784ae0e, type: 2}
   SpawnAmount: f4010000
   TierTransition: 0
   MaxEnemies: 500
@@ -194,56 +194,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InGameMenu: {fileID: 1529335469}
---- !u!1001 &250988515
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 468646, guid: fdfa77a69947d224bb3d1ad47e32b8cd, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 3.30999994
-      objectReference: {fileID: 0}
-    - target: {fileID: 468646, guid: fdfa77a69947d224bb3d1ad47e32b8cd, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -.209999993
-      objectReference: {fileID: 0}
-    - target: {fileID: 468646, guid: fdfa77a69947d224bb3d1ad47e32b8cd, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 468646, guid: fdfa77a69947d224bb3d1ad47e32b8cd, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 468646, guid: fdfa77a69947d224bb3d1ad47e32b8cd, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 468646, guid: fdfa77a69947d224bb3d1ad47e32b8cd, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 468646, guid: fdfa77a69947d224bb3d1ad47e32b8cd, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 468646, guid: fdfa77a69947d224bb3d1ad47e32b8cd, type: 2}
-      propertyPath: m_RootOrder
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 198356, guid: fdfa77a69947d224bb3d1ad47e32b8cd, type: 2}
-      propertyPath: m_Name
-      value: Exploding Spider
-      objectReference: {fileID: 0}
-    - target: {fileID: 11444414, guid: fdfa77a69947d224bb3d1ad47e32b8cd, type: 2}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 1385862766}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: fdfa77a69947d224bb3d1ad47e32b8cd, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1001 &526504983
 Prefab:
   m_ObjectHideFlags: 0
@@ -281,7 +231,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 426780, guid: df8690398e06e084580ba4cc7bea8ca0, type: 2}
       propertyPath: m_RootOrder
-      value: 12
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: df8690398e06e084580ba4cc7bea8ca0, type: 2}
@@ -359,6 +309,52 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
+--- !u!1001 &774965781
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 449272, guid: 869451daa5e866749baea8b13784ae0e, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 449272, guid: 869451daa5e866749baea8b13784ae0e, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 449272, guid: 869451daa5e866749baea8b13784ae0e, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 449272, guid: 869451daa5e866749baea8b13784ae0e, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 449272, guid: 869451daa5e866749baea8b13784ae0e, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 449272, guid: 869451daa5e866749baea8b13784ae0e, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 449272, guid: 869451daa5e866749baea8b13784ae0e, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 449272, guid: 869451daa5e866749baea8b13784ae0e, type: 2}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 177476, guid: 869451daa5e866749baea8b13784ae0e, type: 2}
+      propertyPath: m_Name
+      value: SpiderExplode
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 869451daa5e866749baea8b13784ae0e, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &862132590
 GameObject:
   m_ObjectHideFlags: 0
@@ -480,7 +476,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 459548, guid: 810b9849d4f8f2e48b2b087bdef6e75d, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 197564, guid: 810b9849d4f8f2e48b2b087bdef6e75d, type: 2}
       propertyPath: m_Name
@@ -531,10 +527,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 92a18ba5aa12c9b4cb4c509b2fba9974, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &1385862766 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 145772, guid: df8690398e06e084580ba4cc7bea8ca0, type: 2}
-  m_PrefabInternal: {fileID: 526504983}
 --- !u!1 &1529335469 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 197564, guid: 810b9849d4f8f2e48b2b087bdef6e75d, type: 2}
@@ -749,7 +741,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 403340, guid: da382974c7be0b040821aa3d7c8c3a70, type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 156108, guid: da382974c7be0b040821aa3d7c8c3a70, type: 2}
       propertyPath: m_Name

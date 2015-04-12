@@ -13,7 +13,10 @@ public class SpiderExplode : MonoBehaviour {
 	private Color prevColor;
 	private int colorSwaps;
 	private GameObject explosion;
+	
 	public bool exTriggered = false;
+	private bool targetPlayer;
+	private bool exploding;
 
 	private List<GameObject> inBlastZone;
 
@@ -21,12 +24,7 @@ public class SpiderExplode : MonoBehaviour {
 		explosion = transform.GetChild(0).gameObject;
 		Reset();
 	}
-
-	void OnTriggerEnter2D(Collider2D other){
-		if(other.tag == "Player"){
-			exTriggered = true;
-		}
-	}
+	
 
 	void FixedUpdate () {
 		GetComponent<SpiderWalkRandom>().enabled = true;
@@ -56,6 +54,8 @@ public class SpiderExplode : MonoBehaviour {
 	}
 
 	void Reset(){
+		targetPlayer = true;
+		exploding = false;
 		explosion.SetActive(false);
 		prevColor =  new Color ( 255, 255, 255, 0.3f);
 		colorSwaps = 0;
@@ -67,10 +67,16 @@ public class SpiderExplode : MonoBehaviour {
 
 	IEnumerator Explode () {
 		explosion.SetActive(true);
+		exploding = true;
 		yield return new WaitForSeconds(1f);
 		Reset();
 		gameObject.SetActive(false);
 	}
+
+	void SwitchTarget(){
+		targetPlayer = false;
+	}
+	
 }
 
 
