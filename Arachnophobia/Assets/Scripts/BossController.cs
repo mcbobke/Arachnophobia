@@ -14,10 +14,10 @@ public class BossController : MonoBehaviour {
 	}
 
 	void FixedUpdate () {
-		if (Random.Range (0.0f, 1.0f) <= attackRate) {
+		if (Random.Range (0.0f, 1.0f) <= attackRate) {				// to attack or not
 			float randomAttack = Random.Range(0.0f, 1.0f);
 		
-			if (randomAttack <= 0.33f) {
+			if (randomAttack <= 0.33f) {							// which attack to do
 				// SquashAttack
 			} else if (randomAttack <= 0.66f) {
 				// PincerAttack
