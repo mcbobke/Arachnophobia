@@ -11,8 +11,8 @@ GameObject:
   - 212: {fileID: 21265812}
   - 50: {fileID: 5074794}
   - 61: {fileID: 6119344}
-  - 114: {fileID: 11466524}
   - 95: {fileID: 9547580}
+  - 114: {fileID: 11421358}
   m_Layer: 8
   m_Name: SpiderTall
   m_TagString: Spider
@@ -120,7 +120,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &11466524
+--- !u!114 &11421358
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -128,7 +128,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 101908}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f52daaa64ee8ea84ea417d9db30f1a0c, type: 3}
+  m_Script: {fileID: 11500000, guid: 4e94ff3504bca814bbf1cde4adce3a7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1.5
