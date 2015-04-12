@@ -8,6 +8,7 @@ TagManager:
   - Boundary
   - Web
   - WebSpider
+  - ExplodeSpider
   layers:
   - Default
   - TransparentFX

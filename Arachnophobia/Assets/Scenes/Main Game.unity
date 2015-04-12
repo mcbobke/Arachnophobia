@@ -309,8 +309,10 @@ MonoBehaviour:
   EnemyTypes:
   - {fileID: 169810, guid: cc621813ac00c9741a9a562c0a645017, type: 2}
   - {fileID: 149656, guid: acb5b453705516e46b7a5a3bec396cac, type: 2}
-  SpawnAmount: fa000000fa000000
-  TierTransition: 20
+  - {fileID: 178494, guid: deedf781909d5254fb1b97a2113babee, type: 2}
+  - {fileID: 198356, guid: fdfa77a69947d224bb3d1ad47e32b8cd, type: 2}
+  SpawnAmount: 7d0000007d0000007d0000007d000000
+  TierTransition: 1
   MaxEnemies: 500
   SpawnRate: 1
   active: 0
@@ -327,7 +329,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Web: {fileID: 159936, guid: f2b1750653b7cd842b7d46deab09dd2c, type: 2}
---- !u!4 &303147682 stripped
+--- !u!4 &303147682
 Transform:
   m_PrefabParentObject: {fileID: 403340, guid: da382974c7be0b040821aa3d7c8c3a70, type: 2}
   m_PrefabInternal: {fileID: 2012658861}
@@ -360,7 +362,7 @@ Transform:
   - {fileID: 539871106}
   m_Father: {fileID: 0}
   m_RootOrder: 4
---- !u!4 &320840934 stripped
+--- !u!4 &320840934
 Transform:
   m_PrefabParentObject: {fileID: 452848, guid: 4ad35f0bf45073140bc14b276df38b3d, type: 2}
   m_PrefabInternal: {fileID: 1912677995}
@@ -510,11 +512,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
---- !u!1 &539871105 stripped
+--- !u!1 &539871105
 GameObject:
   m_PrefabParentObject: {fileID: 160608, guid: a2e0135b3e7289241ba78a69a4b77ce2, type: 2}
   m_PrefabInternal: {fileID: 732592264}
---- !u!4 &539871106 stripped
+--- !u!4 &539871106
 Transform:
   m_PrefabParentObject: {fileID: 440324, guid: a2e0135b3e7289241ba78a69a4b77ce2, type: 2}
   m_PrefabInternal: {fileID: 732592264}
@@ -1130,11 +1132,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: da382974c7be0b040821aa3d7c8c3a70, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &2100907141 stripped
+--- !u!1 &2100907141
 GameObject:
   m_PrefabParentObject: {fileID: 197564, guid: 810b9849d4f8f2e48b2b087bdef6e75d, type: 2}
   m_PrefabInternal: {fileID: 455359469}
---- !u!4 &2100907142 stripped
+--- !u!4 &2100907142
 Transform:
   m_PrefabParentObject: {fileID: 459548, guid: 810b9849d4f8f2e48b2b087bdef6e75d, type: 2}
   m_PrefabInternal: {fileID: 455359469}
