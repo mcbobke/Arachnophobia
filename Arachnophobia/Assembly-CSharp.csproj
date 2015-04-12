@@ -61,6 +61,7 @@
      <Compile Include="Assets\Scripts\PlatformerCharacter2D.cs" />
      <Compile Include="Assets\Scripts\PlayerExplode.cs" />
      <Compile Include="Assets\Scripts\SJWalk.cs" />
+     <Compile Include="Assets\Scripts\SeekandSmash.cs" />
      <Compile Include="Assets\Scripts\SpiderExplode.cs" />
      <Compile Include="Assets\Scripts\SpiderJumpingWalk.cs" />
      <Compile Include="Assets\Scripts\SpiderWalk.cs" />
