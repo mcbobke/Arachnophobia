@@ -1048,6 +1048,7 @@ MonoBehaviour:
   Title: {fileID: 1965240412}
   Canvas: {fileID: 2093149208}
   Images: {fileID: 1006932816}
+  es: {fileID: 257985115}
 --- !u!61 &1411480004
 BoxCollider2D:
   m_ObjectHideFlags: 0
