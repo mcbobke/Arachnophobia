@@ -24,9 +24,9 @@ public class BossSpawnWebBall : MonoBehaviour {
 	void SpawnWebBall (float speed) {
 
 		if (Random.Range (0.0f, 1.0f) <= 0.5) {
-			Object webBall = Instantiate(webBallPrefab, Vector3(-10.40, -3.20, 0), Quaternion.identity);
+			//Object webBall = Instantiate(webBallPrefab, Vector3(-10.40, -3.20, 0), Quaternion.identity);
 
-			webBall.rigidBody.
+			//webBall.rigidBody.
 		}
 
 	}

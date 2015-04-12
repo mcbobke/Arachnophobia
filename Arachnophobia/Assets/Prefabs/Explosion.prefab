@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 450384}
   - 198: {fileID: 19880620}
   - 199: {fileID: 19979730}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,7 +27,7 @@ GameObject:
   - 4: {fileID: 491060}
   - 114: {fileID: 11470958}
   - 58: {fileID: 5884460}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Explosion
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -55,7 +55,7 @@ public class SpiderExplode : MonoBehaviour {
 		}
 	}
 
-	void Reset(){
+	public void Reset(){
 		inRange = false;
 		targetPlayer = true;
 		exploding = false;

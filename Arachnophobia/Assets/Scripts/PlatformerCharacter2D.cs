@@ -61,20 +61,10 @@ namespace UnityStandardAssets._2D
                     if (colliders[i].gameObject.tag != "Web")
                     {
 						if(colliders[i].gameObject.tag != "ExplodeSpider")
-                        {
-							es.active--;
-							es.DeactivateSpider(colliders[i].gameObject);
-							colliders[i].gameObject.SetActive(false);
-
-							Debug.Log("NOT");
-						}
-
-						else
-                        {
-							colliders[i].gameObject.GetComponent<SpiderExplode>().targetPlayer = false;
-							colliders[i].gameObject.GetComponent<SpiderExplode>().Explode();
-						}
-
+							colliders[i].gameObject.GetComponent<SpiderExplode>().Reset();
+						es.active--;
+						es.DeactivateSpider(colliders[i].gameObject);
+						colliders[i].gameObject.SetActive(false);
 						es.KillCount++;
                     }
 
