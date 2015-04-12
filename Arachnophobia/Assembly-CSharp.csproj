@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\ExplosionHelper.cs" />
+     <Compile Include="Assets\SJWalk.cs" />
      <Compile Include="Assets\Scripts\BookController.cs" />
      <Compile Include="Assets\Scripts\CameraController.cs" />
      <Compile Include="Assets\Scripts\EnemySpawner.cs" />
