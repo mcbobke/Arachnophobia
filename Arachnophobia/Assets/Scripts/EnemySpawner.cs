@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class EnemySpawner : MonoBehaviour {
@@ -10,6 +11,7 @@ public class EnemySpawner : MonoBehaviour {
 	GameObject[] SpawnList;						//List of enemies to spawn
     public GameObject web;                      //Not really an enemy, but should be spawned anyway
 	public GameObject explosion;				//Explosions
+    public GameObject killText;
 
 	//Spawning Handler
 	public int[] SpawnAmount;					//Amount of enemies available for each tier
@@ -51,10 +53,13 @@ public class EnemySpawner : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+
 		if (KillCount >= TierTransition){
 			TierTransition += TierTransition;       // Move to next tier after certain # of kills
 			EnemyTierProgression();
 		}
+
+        killText.GetComponent<Text>().text = KillCount.ToString();
 	}
 
 	void SpawnEnemy(){
