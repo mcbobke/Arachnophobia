@@ -251,48 +251,6 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 6.4000001, y: 2.5}
---- !u!1001 &232572469
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 491060, guid: a5911a004014fa14aa79ef15a0376652, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 491060, guid: a5911a004014fa14aa79ef15a0376652, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 491060, guid: a5911a004014fa14aa79ef15a0376652, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 491060, guid: a5911a004014fa14aa79ef15a0376652, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 491060, guid: a5911a004014fa14aa79ef15a0376652, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 491060, guid: a5911a004014fa14aa79ef15a0376652, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 491060, guid: a5911a004014fa14aa79ef15a0376652, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 491060, guid: a5911a004014fa14aa79ef15a0376652, type: 2}
-      propertyPath: m_RootOrder
-      value: 13
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: a5911a004014fa14aa79ef15a0376652, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &257985112
 GameObject:
   m_ObjectHideFlags: 0
@@ -349,10 +307,10 @@ MonoBehaviour:
   EnemyHeir: {fileID: 334649011}
   EnemyTypes:
   - {fileID: 177476, guid: 869451daa5e866749baea8b13784ae0e, type: 2}
-  - {fileID: 149656, guid: acb5b453705516e46b7a5a3bec396cac, type: 2}
   web: {fileID: 159936, guid: f2b1750653b7cd842b7d46deab09dd2c, type: 2}
   explosion: {fileID: 156772, guid: a5911a004014fa14aa79ef15a0376652, type: 2}
-  SpawnAmount: fa000000fa000000
+  killText: {fileID: 280024878}
+  SpawnAmount: f4010000
   TierTransition: 1
   MaxEnemies: 500
   SpawnRate: 1
@@ -935,6 +893,10 @@ Prefab:
       propertyPath: es
       value: 
       objectReference: {fileID: 257985115}
+    - target: {fileID: 11499664, guid: df8690398e06e084580ba4cc7bea8ca0, type: 2}
+      propertyPath: healthText
+      value: 
+      objectReference: {fileID: 1470402548}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: df8690398e06e084580ba4cc7bea8ca0, type: 2}
   m_IsPrefabParent: 0
