@@ -81,7 +81,7 @@ namespace UnityStandardAssets._2D
                 }
 
                 // The player hit the ground
-                else if (colliders[i].gameObject != gameObject)
+                else if (colliders[i].gameObject != gameObject && colliders[i].gameObject.tag == "Ground")
                 {
                     m_Grounded = true;
                 }
@@ -99,12 +99,7 @@ namespace UnityStandardAssets._2D
             {
                 if (!isInvincible)
                 {
-                    if (coll.gameObject.tag == "TallSpiderHelper")
-                    {
-                        Physics2D.IgnoreCollision(GetComponent<Collider2D>(), coll.gameObject.GetComponent<Collider2D>());
-                    }
-
-                    else if (numLives == 1)
+                    if (numLives == 1)
                         isAlive = false;
 
                     else
