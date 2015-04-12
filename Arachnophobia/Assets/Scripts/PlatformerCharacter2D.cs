@@ -99,7 +99,12 @@ namespace UnityStandardAssets._2D
             {
                 if (!isInvincible)
                 {
-                    if (numLives == 1)
+                    if (coll.gameObject.tag == "TallSpiderHelper")
+                    {
+                        Physics2D.IgnoreCollision(GetComponent<Collider2D>(), coll.gameObject.GetComponent<Collider2D>());
+                    }
+
+                    else if (numLives == 1)
                         isAlive = false;
 
                     else
