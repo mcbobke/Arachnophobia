@@ -46,9 +46,6 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\ExplosionHelper.cs" />
-     <Compile Include="Assets\PlayerExplode.cs" />
-     <Compile Include="Assets\SJWalk.cs" />
      <Compile Include="Assets\Scripts\BookController.cs" />
      <Compile Include="Assets\Scripts\BossController.cs" />
      <Compile Include="Assets\Scripts\BossSpawnWebBall.cs" />
@@ -56,18 +53,21 @@
      <Compile Include="Assets\Scripts\DisplayKills.cs" />
      <Compile Include="Assets\Scripts\DisplayLives.cs" />
      <Compile Include="Assets\Scripts\EnemySpawner.cs" />
+     <Compile Include="Assets\Scripts\ExplosionHelper.cs" />
      <Compile Include="Assets\Scripts\HealthCounter.cs" />
      <Compile Include="Assets\Scripts\LoadScene.cs" />
      <Compile Include="Assets\Scripts\PauseController.cs" />
      <Compile Include="Assets\Scripts\Platformer2DUserControl.cs" />
      <Compile Include="Assets\Scripts\PlatformerCharacter2D.cs" />
+     <Compile Include="Assets\Scripts\PlayerExplode.cs" />
+     <Compile Include="Assets\Scripts\SJWalk.cs" />
      <Compile Include="Assets\Scripts\SpiderExplode.cs" />
      <Compile Include="Assets\Scripts\SpiderJumpingWalk.cs" />
      <Compile Include="Assets\Scripts\SpiderWalk.cs" />
      <Compile Include="Assets\Scripts\SpiderWalkRandom.cs" />
      <Compile Include="Assets\Scripts\StartGameTrigger.cs" />
+     <Compile Include="Assets\Scripts\TallSpiderWalk.cs" />
      <Compile Include="Assets\Scripts\WebBall.cs" />
-     <Compile Include="Assets\TallSpiderWalk.cs" />
      <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
