@@ -55,8 +55,7 @@ namespace UnityStandardAssets._2D
                         gc.DeactivateSpider(colliders[i].gameObject);
                         colliders[i].gameObject.SetActive(false);
 						if(colliders[i].gameObject.name == "SpiderExplode(Clone)")
-							Debug.Log("Moo");
-							//colliders[i].gameObject.SendMessage("");
+							colliders[i].gameObject.GetComponent<SpiderExplode>().targetPlayer = false;
                     }
 
                     else if (colliders[i].gameObject.tag == "ExplosionHelper")
