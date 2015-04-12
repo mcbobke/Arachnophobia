@@ -163,6 +163,7 @@ MonoBehaviour:
   flashRate: .200000003
   flashesBeforeExploding: 4
   exTriggered: 0
+  targetPlayer: 0
 --- !u!114 &11454124
 MonoBehaviour:
   m_ObjectHideFlags: 1

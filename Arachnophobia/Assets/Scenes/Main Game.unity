@@ -310,7 +310,7 @@ MonoBehaviour:
   - {fileID: 169810, guid: cc621813ac00c9741a9a562c0a645017, type: 2}
   - {fileID: 149656, guid: acb5b453705516e46b7a5a3bec396cac, type: 2}
   - {fileID: 193520, guid: 3a197e95392680846954ff7713af9790, type: 2}
-  - {fileID: 177476, guid: f2783302b4528e64d987754de32bd471, type: 2}
+  - {fileID: 177476, guid: 869451daa5e866749baea8b13784ae0e, type: 2}
   SpawnAmount: 7d0000007d0000007d0000007d000000
   TierTransition: 1
   MaxEnemies: 500
@@ -633,7 +633,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 426780, guid: df8690398e06e084580ba4cc7bea8ca0, type: 2}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 11499664, guid: df8690398e06e084580ba4cc7bea8ca0, type: 2}
       propertyPath: gc
@@ -643,6 +643,10 @@ Prefab:
       propertyPath: camera
       value: 
       objectReference: {fileID: 60201191}
+    - target: {fileID: 5018890, guid: df8690398e06e084580ba4cc7bea8ca0, type: 2}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: df8690398e06e084580ba4cc7bea8ca0, type: 2}
   m_IsPrefabParent: 0
