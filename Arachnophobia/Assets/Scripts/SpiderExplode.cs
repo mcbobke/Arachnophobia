@@ -13,7 +13,7 @@ public class SpiderExplode : MonoBehaviour {
 	private Color prevColor;
 	private int colorSwaps;
 	private GameObject explosion;
-	private bool exTriggered = false;
+	public bool exTriggered = false;
 
 	private List<GameObject> inBlastZone;
 

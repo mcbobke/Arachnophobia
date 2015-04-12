@@ -56,6 +56,11 @@ namespace UnityStandardAssets._2D
                         colliders[i].gameObject.SetActive(false);
                     }
 
+                    else if (colliders[i].gameObject.tag == "ExplosionHelper")
+                    {
+                        // Don't do anything
+                    }
+
                     else
                     {
                         Destroy(colliders[i].gameObject);

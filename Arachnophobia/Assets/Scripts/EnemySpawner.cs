@@ -72,7 +72,7 @@ public class EnemySpawner : MonoBehaviour {
 
 	void EnemyTierProgression(){
 		if(currentTier <EnemyTypes.Length-1)
-			maxIndex += SpawnAmount[currentTier++];
+			maxIndex += SpawnAmount[currentTier++]; // Increase the max index of spawnable enemies to be ANYTHING from 0 to the max of the next tier, e.g. 0-100 initially then 0-200
 		else if(SpawnRate <100)
 			SpawnRate++;
 	}

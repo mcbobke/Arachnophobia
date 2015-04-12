@@ -309,8 +309,8 @@ MonoBehaviour:
   EnemyTypes:
   - {fileID: 169810, guid: cc621813ac00c9741a9a562c0a645017, type: 2}
   - {fileID: 149656, guid: acb5b453705516e46b7a5a3bec396cac, type: 2}
-  - {fileID: 178494, guid: deedf781909d5254fb1b97a2113babee, type: 2}
-  - {fileID: 198356, guid: fdfa77a69947d224bb3d1ad47e32b8cd, type: 2}
+  - {fileID: 193520, guid: ea517ffeb6b30ea48a8b616d5ef1eae0, type: 2}
+  - {fileID: 177476, guid: 869451daa5e866749baea8b13784ae0e, type: 2}
   SpawnAmount: 7d0000007d0000007d0000007d000000
   TierTransition: 1
   MaxEnemies: 500

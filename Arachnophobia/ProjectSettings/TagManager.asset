@@ -9,6 +9,7 @@ TagManager:
   - Web
   - WebSpider
   - ExplodeSpider
+  - ExplosionHelper
   layers:
   - Default
   - TransparentFX
