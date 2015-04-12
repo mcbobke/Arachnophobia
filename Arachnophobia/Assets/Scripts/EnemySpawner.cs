@@ -26,21 +26,21 @@ public class EnemySpawner : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		int eTier = 0;
-		int currentTierCount = 0;
-		maxIndex = SpawnAmount[0];
-		active = 0;
+        int eTier = 0;                          // Current tier that you are on
+		int currentTierCount = 0;               // Amount of enemies created for current tier
+		maxIndex = SpawnAmount[0];              // Last index of a created enemy in the game (e.g. how many enemies created, NOT spawned)
+		active = 0;                             // How many enemies currently active (spawned)
 		SpawnList = new GameObject[MaxEnemies];
 		for (int i = 0; i <MaxEnemies; i++){
-			if(currentTierCount >= SpawnAmount[eTier]){
+			if(currentTierCount >= SpawnAmount[eTier]){     // If # enemies of current tier at peak, go to next tier
 				currentTierCount = 0;
 				eTier++;
 			}
 			currentTierCount++;
-			GameObject enemySpawned = (GameObject)Instantiate(EnemyTypes[eTier]);
-			enemySpawned.transform.parent = EnemyHeir.transform;
+			GameObject enemySpawned = (GameObject)Instantiate(EnemyTypes[eTier]);   // Create a new enemy of current tier
+			enemySpawned.transform.parent = EnemyHeir.transform;                    // Use a fake transform
 			enemySpawned.SetActive(false);
-			SpawnList[i] = enemySpawned;
+			SpawnList[i] = enemySpawned;                                            // Put it in array
 		}
 		InvokeRepeating("SpawnEnemy",0.0f, 2f);
 	}
@@ -48,7 +48,7 @@ public class EnemySpawner : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (KillCount >= TierTransition){
-			TierTransition += TierTransition;
+			TierTransition += TierTransition;       // Move to next tier after certain # of kills
 			EnemyTierProgression();
 		}
 	}
@@ -56,13 +56,13 @@ public class EnemySpawner : MonoBehaviour {
 	void SpawnEnemy(){
 		int spawned = 0;
 		while(spawned < SpawnRate){
-			if(active >= maxIndex-1){break;}
-			int spawnIndex = Random.Range (0, maxIndex-1);
+			if(active >= maxIndex-1){break;}               // Max number of enemies allowed to be active == last index of created enemies
+			int spawnIndex = Random.Range (0, maxIndex-1); // Which one to spawn in SpawnList
 			if(!SpawnList[spawnIndex].activeInHierarchy){
 				float x_pos = Random.Range((float)(-1.0)*xDistance, xDistance);
 				float y_pos = yDistance;
 				float z_pos = SpawnList[spawnIndex].transform.position.z;
-				SpawnList[spawnIndex].transform.position = new Vector3(x_pos,y_pos,z_pos);
+				SpawnList[spawnIndex].transform.position = new Vector3(x_pos,y_pos,z_pos);      // Gives it a randomized position in x-space
 				SpawnList[spawnIndex].SetActive(true);
 				spawned++;
 				active++;

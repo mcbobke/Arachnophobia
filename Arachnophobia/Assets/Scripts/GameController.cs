@@ -4,6 +4,7 @@ using System.Collections;
 public class GameController : MonoBehaviour
 {
     public GameObject Web;
+
     // Use this for initialization
     void Start()
     {
