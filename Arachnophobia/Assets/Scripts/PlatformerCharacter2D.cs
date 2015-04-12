@@ -9,18 +9,24 @@ namespace UnityStandardAssets._2D
         private float m_MaxSpeed = 5f;                   // The fastest the player can travel in the x axis.
         private float m_JumpForce = 400f;                 // Amount of force added when the player jumps.
         private bool m_AirControl = true;                 // Whether or not a player can steer while jumping.
-        const float k_GroundedRadius = .2f;               // Radius of the overlap circle to determine if grounded
+        const float k_GroundedRadius = .2f;               // Radius of the overlap circle to determine if grounded.
         private bool m_Grounded;                          // Whether or not the player is grounded.
         private bool m_FacingRight = false;                // For determining which way the player is currently facing.
         private bool bounce = false;                      // For determining whether or not the player should bounce.
         public int numLives;                              // How many lives the player has.
         private bool isAlive;                             // If the player is alive.
+        private float elapsedTime;                        // Amount of time that has elapsed since last color switch.
+        private int colorSwaps;                           // Number of color swaps that have been done.
+        public int flashesBeforeNotInvincible;            // Number of total color changes (change and then change back) before becoming vulnerable again.
+        private bool isInvincible;
+        private float flashRate;
 
         private Transform m_GroundCheck;                  // A position marking where to check if the player is grounded.
         private Animator m_Anim;                          // Reference to the player's animator component.
         private Rigidbody2D m_Rigidbody2D;
         public GameController gc;
         private List<String> objTags;
+        private Color prevColor;
 
         private void Awake()
         {
@@ -30,6 +36,9 @@ namespace UnityStandardAssets._2D
             m_Rigidbody2D = GetComponent<Rigidbody2D>();
             isAlive = true;
             objTags = new List<String> { "Spider", "ExplodeSpider", "Web", "WebSpider" };
+            prevColor = new Color(255, 255, 255, 0.3f);
+            isInvincible = false;
+            flashRate = 0.2f;
         }
 
 
@@ -51,18 +60,24 @@ namespace UnityStandardAssets._2D
 					//CHANGED FOR EXPLODING - Arielle
                     if (colliders[i].gameObject.tag != "Web")
                     {
-						if(colliders[i].gameObject.tag != "ExplodeSpider"){
+						if(colliders[i].gameObject.tag != "ExplodeSpider")
+                        {
 							gc.GetComponent<EnemySpawner>().active--;
 							gc.DeactivateSpider(colliders[i].gameObject);
 							colliders[i].gameObject.SetActive(false);
+
 							Debug.Log("NOT");
 						}
-						else{
+
+						else
+                        {
 							colliders[i].gameObject.GetComponent<SpiderExplode>().targetPlayer = false;
 							colliders[i].gameObject.GetComponent<SpiderExplode>().Explode();
 						}
+
 						gc.GetComponent<EnemySpawner>().KillCount++;
                     }
+
                     else
                     {
                         Destroy(colliders[i].gameObject);
@@ -76,6 +91,9 @@ namespace UnityStandardAssets._2D
                 }
             }
 
+            if (isInvincible)
+                InvincibleColorChange();
+
             m_Anim.SetBool("Ground", m_Grounded);
         }
 
@@ -83,19 +101,30 @@ namespace UnityStandardAssets._2D
         {
             if (objTags.Contains(coll.gameObject.tag) && coll.gameObject.tag != "Web")
             {
-                if (numLives == 1)
-                    isAlive = false;
-                else
+                if (!isInvincible)
                 {
-                    --numLives;
-                    coll.gameObject.SetActive(false);
+                    if (numLives == 1)
+                        isAlive = false;
+
+                    else
+                    {
+                        --numLives;
+                        coll.gameObject.SetActive(false);
+                        isInvincible = true;
+                        Debug.Log(isInvincible + " this should be true");
+                    }
+
+                    Physics2D.IgnoreCollision(GetComponent<Collider2D>(), coll.gameObject.GetComponent<Collider2D>());
                 }
 
-                Physics2D.IgnoreCollision(GetComponent<Collider2D>(), coll.gameObject.GetComponent<Collider2D>());
+                else
+                {
+                    coll.gameObject.SetActive(false);
+                    Physics2D.IgnoreCollision(GetComponent<Collider2D>(), coll.gameObject.GetComponent<Collider2D>());
+                }
             }
 
-            //Debug.Log(numLives);
-            //Debug.Log(isAlive);
+            Debug.Log(numLives);
         }
 
         public void Move(float move, bool jump)
@@ -152,6 +181,32 @@ namespace UnityStandardAssets._2D
             Vector3 theScale = transform.localScale;
             theScale.x *= -1;
             transform.localScale = theScale;
+        }
+
+        private void SwapColor()
+        {
+            Color temp = GetComponent<SpriteRenderer>().color;
+            GetComponent<SpriteRenderer>().color = prevColor;
+            prevColor = temp;
+        }
+
+        private void InvincibleColorChange()
+        {
+            elapsedTime += Time.deltaTime;
+
+            if (elapsedTime >= flashRate)
+            {
+                Debug.Log("Calling SwapColor");
+                SwapColor();
+                colorSwaps += 1;
+                elapsedTime = 0.0f;
+            }
+
+            if ((colorSwaps / 2) >= flashesBeforeNotInvincible)
+            {
+                isInvincible = false;
+                colorSwaps = 0;
+            }
         }
     }
 }
