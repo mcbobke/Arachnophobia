@@ -3,23 +3,26 @@ using System.Collections;
 
 public class WebBall : MonoBehaviour {
 
-/*
-	public float speed = 2.5f;
-	public int direction = 1;
+	public float speed = 5.0f;
 
 	// Use this for initialization
 	void Start () {
-	
+		if (Random.Range (0.0f, 1.0f) <= 0.5) {
+			transform.position = new Vector2 (-10.40f, -3f);
+			GetComponent<Rigidbody2D>().AddForce (new Vector2 (speed, 0), ForceMode2D.Impulse);
+		} else {
+			transform.position = new Vector2 (10.40f, -3f);
+			GetComponent<Rigidbody2D>().AddForce (new Vector2 (-1 * speed, 0), ForceMode2D.Impulse);
+		}
 	}
 	
 	// Update is called once per frame
 	void FixedUpdate () {
 	
 	}
-*/
 
 	void OnCollisionEnter2D (Collision2D coll) {
-		if (coll.gameObject.tag == "Boundary") {
+		if ((coll.gameObject.tag == "Boundary") || (coll.gameObject.tag == "Player")) {
 			Destroy(this.gameObject);
 		}
 	}

@@ -54,7 +54,6 @@
      <Compile Include="Assets\Scripts\DisplayKills.cs" />
      <Compile Include="Assets\Scripts\DisplayLives.cs" />
      <Compile Include="Assets\Scripts\EnemySpawner.cs" />
-     <Compile Include="Assets\Scripts\GameController.cs" />
      <Compile Include="Assets\Scripts\HealthCounter.cs" />
      <Compile Include="Assets\Scripts\LoadScene.cs" />
      <Compile Include="Assets\Scripts\PauseController.cs" />

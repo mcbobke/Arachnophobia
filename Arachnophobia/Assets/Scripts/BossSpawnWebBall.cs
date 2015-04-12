@@ -3,7 +3,7 @@ using System.Collections;
 
 public class BossSpawnWebBall : MonoBehaviour {
 
-	public Transform webBallPrefab;
+	public GameObject webBallPrefab;
 
 	// Use this for initialization
 	void Start () {
@@ -22,12 +22,6 @@ public class BossSpawnWebBall : MonoBehaviour {
 	
 	// Update is called once per frame
 	void SpawnWebBall (float speed) {
-
-		if (Random.Range (0.0f, 1.0f) <= 0.5) {
-			Object webBall = Instantiate(webBallPrefab, Vector3(-10.40, -3.20, 0), Quaternion.identity);
-
-			webBall.rigidBody.
-		}
-
+		Instantiate (webBallPrefab, new Vector2 (-10.40f, -3.50f), new Quaternion (0f, 0f, 0f, 0f));
 	}
 }
