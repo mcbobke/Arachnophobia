@@ -12,6 +12,7 @@ TagManager:
   - ExplosionHelper
   - TallSpiderHelper
   - Ground
+  - EnemyParent
   layers:
   - Default
   - TransparentFX

@@ -40,7 +40,7 @@ public class TallSpiderWalk : MonoBehaviour {
 
             foreach(BoxCollider2D boxcoll in allCollidersOnObject)
             {
-                if (boxcoll.gameObject.transform.parent != null) // This means the gameobject that this collider is attached to has a parent, so it must be the child
+                if (boxcoll.gameObject.transform.parent != null && boxcoll.gameObject.transform.parent.tag != "EnemyParent") // This means the gameobject that this collider is attached to has a parent, so it must be the child
                 {
                     boxcoll.enabled = false;
                 }
