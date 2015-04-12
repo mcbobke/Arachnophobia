@@ -9,6 +9,7 @@ public class EnemySpawner : MonoBehaviour {
 	public GameObject[] EnemyTypes;				//Set enemy types to be spawned by spawner
 	GameObject[] SpawnList;						//List of enemies to spawn
     public GameObject web;                      //Not really an enemy, but should be spawned anyway
+	public GameObject explosion;				//Explosions
 
 	//Spawning Handler
 	public int[] SpawnAmount;					//Amount of enemies available for each tier
@@ -44,9 +45,10 @@ public class EnemySpawner : MonoBehaviour {
 			enemySpawned.SetActive(false);
 			SpawnList[i] = enemySpawned;                                            // Put it in array
 		}
+
 		InvokeRepeating("SpawnEnemy",0.0f, 2f);
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 		if (KillCount >= TierTransition){
@@ -86,5 +88,9 @@ public class EnemySpawner : MonoBehaviour {
             Vector3 pos = obj.transform.position;
             Instantiate(web, new Vector2(pos.x, pos.y + .3f), new Quaternion(0f, 0f, 0f, 0f));
         }
+		if(obj.tag == "ExplodeSpider"){
+			Vector3 pos = obj.transform.position;
+			Instantiate(explosion, new Vector2(pos.x, pos.y + .3f), new Quaternion(0f, 0f, 0f, 0f));
+		}
     }
 }

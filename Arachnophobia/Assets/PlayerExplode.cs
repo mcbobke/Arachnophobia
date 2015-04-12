@@ -14,4 +14,5 @@ public class PlayerExplode : MonoBehaviour {
 			gc.GetComponent<EnemySpawner>().active -=1;
 		}
 	}
+
 }

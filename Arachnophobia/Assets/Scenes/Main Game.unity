@@ -312,6 +312,7 @@ MonoBehaviour:
   - {fileID: 177476, guid: 869451daa5e866749baea8b13784ae0e, type: 2}
   - {fileID: 101908, guid: 6a3c90aa92feb0b448cc119db0adfbfd, type: 2}
   web: {fileID: 159936, guid: f2b1750653b7cd842b7d46deab09dd2c, type: 2}
+  explosion: {fileID: 0}
   SpawnAmount: 6400000064000000640000006400000064000000
   TierTransition: 1
   MaxEnemies: 500
@@ -384,7 +385,7 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 280024878}
---- !u!4 &303147682
+--- !u!4 &303147682 stripped
 Transform:
   m_PrefabParentObject: {fileID: 403340, guid: da382974c7be0b040821aa3d7c8c3a70, type: 2}
   m_PrefabInternal: {fileID: 2012658861}
@@ -417,7 +418,7 @@ Transform:
   - {fileID: 539871106}
   m_Father: {fileID: 0}
   m_RootOrder: 4
---- !u!4 &320840934
+--- !u!4 &320840934 stripped
 Transform:
   m_PrefabParentObject: {fileID: 452848, guid: 4ad35f0bf45073140bc14b276df38b3d, type: 2}
   m_PrefabInternal: {fileID: 1912677995}
@@ -625,11 +626,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1006932817}
   m_RootOrder: 1
---- !u!1 &539871105
+--- !u!1 &539871105 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 160608, guid: a2e0135b3e7289241ba78a69a4b77ce2, type: 2}
   m_PrefabInternal: {fileID: 732592264}
---- !u!4 &539871106
+--- !u!4 &539871106 stripped
 Transform:
   m_PrefabParentObject: {fileID: 440324, guid: a2e0135b3e7289241ba78a69a4b77ce2, type: 2}
   m_PrefabInternal: {fileID: 732592264}
@@ -1458,11 +1459,11 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
---- !u!1 &2100907141
+--- !u!1 &2100907141 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 197564, guid: 810b9849d4f8f2e48b2b087bdef6e75d, type: 2}
   m_PrefabInternal: {fileID: 455359469}
---- !u!4 &2100907142
+--- !u!4 &2100907142 stripped
 Transform:
   m_PrefabParentObject: {fileID: 459548, guid: 810b9849d4f8f2e48b2b087bdef6e75d, type: 2}
   m_PrefabInternal: {fileID: 455359469}
