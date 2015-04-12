@@ -24,7 +24,7 @@ namespace UnityStandardAssets._2D
         private Transform m_GroundCheck;                  // A position marking where to check if the player is grounded.
         private Animator m_Anim;                          // Reference to the player's animator component.
         private Rigidbody2D m_Rigidbody2D;
-        public GameController gc;
+        public EnemySpawner es;
         private List<String> objTags;
         private Color prevColor;
 
@@ -62,8 +62,8 @@ namespace UnityStandardAssets._2D
                     {
 						if(colliders[i].gameObject.tag != "ExplodeSpider")
                         {
-							gc.GetComponent<EnemySpawner>().active--;
-							gc.DeactivateSpider(colliders[i].gameObject);
+							es.active--;
+							es.DeactivateSpider(colliders[i].gameObject);
 							colliders[i].gameObject.SetActive(false);
 
 							Debug.Log("NOT");
@@ -75,7 +75,7 @@ namespace UnityStandardAssets._2D
 							colliders[i].gameObject.GetComponent<SpiderExplode>().Explode();
 						}
 
-						gc.GetComponent<EnemySpawner>().KillCount++;
+						es.KillCount++;
                     }
 
                     else
