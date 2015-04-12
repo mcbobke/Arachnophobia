@@ -52,6 +52,9 @@ TagManager:
   - name: Rain
     uniqueID: 911204677
     locked: 0
+  - name: Boss
+    uniqueID: 2474210599
+    locked: 0
   - name: Ground
     uniqueID: 1484156367
     locked: 0

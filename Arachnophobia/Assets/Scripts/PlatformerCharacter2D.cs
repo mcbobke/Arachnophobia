@@ -209,5 +209,11 @@ namespace UnityStandardAssets._2D
                 colorSwaps = 0;
             }
         }
+		public void TakeDamage(){
+			if(!isInvincible){
+				isInvincible = true;
+				numLives--;
+			}
+		}
     }
 }
