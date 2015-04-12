@@ -51,7 +51,6 @@ namespace UnityStandardAssets._2D
                     if (colliders[i].gameObject.tag != "Web")
                     {
 						gc.GetComponent<EnemySpawner>().KillCount++;
-						Debug.Log(colliders[i].gameObject.tag);
 						if(colliders[i].gameObject.tag != "ExplodeSpider"){
 							gc.GetComponent<EnemySpawner>().active--;
 							gc.DeactivateSpider(colliders[i].gameObject);

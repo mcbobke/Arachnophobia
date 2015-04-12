@@ -10,7 +10,6 @@ public class ExplosionHelper : MonoBehaviour
     {
 		if (transform.parent.gameObject.GetComponent<SpiderExplode>().exploding){
 			bool target = transform.parent.gameObject.GetComponent<SpiderExplode>().targetPlayer;
-			Debug.Log(coll.gameObject.name);
 			if(!target && (coll.gameObject.tag == "Spider" || coll.gameObject.tag == "ExplodeSpider")){
 				coll.gameObject.SetActive(false);
 			}

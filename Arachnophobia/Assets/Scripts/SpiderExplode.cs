@@ -3,9 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class SpiderExplode : MonoBehaviour {
-
-	public GameObject player;
-	public float triggerDistance = 3.0f;
+	
 	public float flashRate = 0.2f;
 	public int flashesBeforeExploding = 4;
 
