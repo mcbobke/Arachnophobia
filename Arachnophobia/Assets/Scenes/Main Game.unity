@@ -648,6 +648,10 @@ Prefab:
       propertyPath: m_IsKinematic
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11499664, guid: df8690398e06e084580ba4cc7bea8ca0, type: 2}
+      propertyPath: flashesBeforeNotInvincible
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: df8690398e06e084580ba4cc7bea8ca0, type: 2}
   m_IsPrefabParent: 0
