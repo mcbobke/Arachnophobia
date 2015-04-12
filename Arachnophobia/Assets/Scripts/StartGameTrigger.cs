@@ -7,11 +7,16 @@ public class StartGameTrigger : MonoBehaviour {
 	public GameObject GameController;
 	public GameObject PreGame;
     public GameObject Title;
+    public GameObject Canvas;
+    public GameObject Images;
 
 	// Use this for initialization
 	void Awake () {
 		GameController.SetActive(false);
 		PreGame.SetActive(true);
+        Title.SetActive(true);
+        Canvas.SetActive(false);
+        Images.SetActive(false);
 	}
 
 	void OnTriggerEnter2D(Collider2D other){
@@ -20,6 +25,8 @@ public class StartGameTrigger : MonoBehaviour {
 			PreGame.SetActive(false);
 			gameObject.SetActive(false);
             Title.SetActive(false);
+            Canvas.SetActive(true);
+            Images.SetActive(true);
 		}
 	}
 
