@@ -44,18 +44,26 @@ public class ArmSquishController : MonoBehaviour {
 				Vector2 destionation = new Vector2 (player.transform.position.x - (isLeftArm * targetPoint), transform.position.y);
 				transform.position = Vector2.MoveTowards (current, destionation, Time.deltaTime * armSpeed);
 			}
-
-			timer += Time.deltaTime;
 		} else {
-			Vector2 pos = new Vector2 (transform.position.x, transform.position.y);
-			pos.y -= Time.deltaTime * armSpeed * 2;
-			transform.position = pos;
+			if (transform.position.y > -6.1) { 		 					// if arm is below the ground
+				Vector2 pos = new Vector2 (transform.position.x, transform.position.y);
+				pos.y -= Time.deltaTime * armSpeed * 2;
+				transform.position = pos;
+			}
 
-			if (transform.position.y <= -6.1) { 				// if arm is below the ground
-				Initialize ();
-				this.gameObject.SetActive(false);
+			if (timer >= secondsBeforeSmash * 1.5) {
+				Vector2 pos = new Vector2 (transform.position.x, transform.position.y);
+				pos.x -= Time.deltaTime * armSpeed * 2 * isLeftArm;
+				transform.position = pos;
+
+				if (Mathf.Abs(transform.position.x) > 18) {
+					Initialize ();
+					this.gameObject.SetActive(false);
+				}
 			}
 		}
+
+		timer += Time.deltaTime;
 	}
 
 /*
