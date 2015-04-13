@@ -13,6 +13,8 @@ public class EnemySpawner : MonoBehaviour {
 	public GameObject explosion;				//Explosions
     public GameObject killText;
 	public GameObject boss;
+    public GameObject ground;                   //For controlling the stupid music
+    public AudioSource bossMusic;               //Again, for controlling the stupid music
 
 	//Spawning Handler
 	public int[] SpawnAmount;					//Amount of enemies available for each tier
@@ -65,6 +67,8 @@ public class EnemySpawner : MonoBehaviour {
 	void Update () {
 		if (KillCount != 0 && KillCount%ActivateBoss == 0 && !bossActive){
 			DeactivateAll();
+            ground.GetComponent<AudioSource>().Stop();
+            bossMusic.Play();
 			SpawnList[MaxEnemies].SetActive(true);
 			restartSpawn = SpawnRate;
 			SpawnRate = 0;
@@ -80,6 +84,8 @@ public class EnemySpawner : MonoBehaviour {
 				bossActive = false;
 				KillCount++;
 				SpawnRate = restartSpawn;
+                bossMusic.Stop();
+                ground.GetComponent<AudioSource>().Play();
 			}
 		}
 

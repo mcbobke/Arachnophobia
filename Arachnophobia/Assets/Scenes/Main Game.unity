@@ -193,6 +193,7 @@ GameObject:
   - 4: {fileID: 218360317}
   - 212: {fileID: 218360316}
   - 61: {fileID: 218360318}
+  - 82: {fileID: 218360319}
   m_Layer: 0
   m_Name: Ground
   m_TagString: Ground
@@ -251,6 +252,75 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 6.4000001, y: 2.0999999}
+--- !u!82 &218360319
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 218360315}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 372632466488c764cad6e5ff3660c573, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: .356000006
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!1 &257985112
 GameObject:
   m_ObjectHideFlags: 0
@@ -263,6 +333,7 @@ GameObject:
   - 114: {fileID: 257985115}
   - 114: {fileID: 257985116}
   - 82: {fileID: 257985117}
+  - 82: {fileID: 257985118}
   m_Layer: 0
   m_Name: _GameController
   m_TagString: GameController
@@ -317,12 +388,14 @@ MonoBehaviour:
   explosion: {fileID: 156772, guid: a5911a004014fa14aa79ef15a0376652, type: 2}
   killText: {fileID: 280024878}
   boss: {fileID: 192778, guid: 8cf26eb2a47fbcf49a5730b8390bd03f, type: 2}
-  SpawnAmount: 0500000005000000050000000500000005000000
+  ground: {fileID: 218360315}
+  bossMusic: {fileID: 257985118}
+  SpawnAmount: 0300000003000000030000000300000003000000
   TierTransition: 1
-  MaxEnemies: 25
+  MaxEnemies: 15
   SpawnRate: 1
   active: 0
-  ActivateBoss: 5
+  ActivateBoss: 25
   KillCount: 0
 --- !u!114 &257985116
 MonoBehaviour:
@@ -350,6 +423,75 @@ AudioSource:
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+--- !u!82 &257985118
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 257985112}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 55b40e693fe3db14288c6b906efe3dd0, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: .658999979
+  m_Pitch: 1
+  Loop: 1
   Mute: 0
   Priority: 128
   DopplerLevel: 1
@@ -471,7 +613,7 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 280024878}
---- !u!4 &303147682 stripped
+--- !u!4 &303147682
 Transform:
   m_PrefabParentObject: {fileID: 403340, guid: da382974c7be0b040821aa3d7c8c3a70, type: 2}
   m_PrefabInternal: {fileID: 2012658861}
@@ -504,7 +646,7 @@ Transform:
   - {fileID: 539871106}
   m_Father: {fileID: 0}
   m_RootOrder: 4
---- !u!4 &320840934 stripped
+--- !u!4 &320840934
 Transform:
   m_PrefabParentObject: {fileID: 452848, guid: 4ad35f0bf45073140bc14b276df38b3d, type: 2}
   m_PrefabInternal: {fileID: 1912677995}
@@ -712,11 +854,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1006932817}
   m_RootOrder: 1
---- !u!1 &539871105 stripped
+--- !u!1 &539871105
 GameObject:
   m_PrefabParentObject: {fileID: 160608, guid: a2e0135b3e7289241ba78a69a4b77ce2, type: 2}
   m_PrefabInternal: {fileID: 2046199029}
---- !u!4 &539871106 stripped
+--- !u!4 &539871106
 Transform:
   m_PrefabParentObject: {fileID: 440324, guid: a2e0135b3e7289241ba78a69a4b77ce2, type: 2}
   m_PrefabInternal: {fileID: 2046199029}
@@ -1059,7 +1201,7 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: df8690398e06e084580ba4cc7bea8ca0, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &1145671893 stripped
+--- !u!1 &1145671893
 GameObject:
   m_PrefabParentObject: {fileID: 145772, guid: df8690398e06e084580ba4cc7bea8ca0, type: 2}
   m_PrefabInternal: {fileID: 1145671892}
@@ -2102,11 +2244,11 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
---- !u!1 &2100907141 stripped
+--- !u!1 &2100907141
 GameObject:
   m_PrefabParentObject: {fileID: 197564, guid: 810b9849d4f8f2e48b2b087bdef6e75d, type: 2}
   m_PrefabInternal: {fileID: 455359469}
---- !u!4 &2100907142 stripped
+--- !u!4 &2100907142
 Transform:
   m_PrefabParentObject: {fileID: 459548, guid: 810b9849d4f8f2e48b2b087bdef6e75d, type: 2}
   m_PrefabInternal: {fileID: 455359469}

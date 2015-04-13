@@ -82,7 +82,7 @@ GameObject:
   - 61: {fileID: 6129990}
   m_Layer: 0
   m_Name: Right Arm
-  m_TagString: Untagged
+  m_TagString: Boss Arm
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -118,7 +118,7 @@ GameObject:
   - 61: {fileID: 6186270}
   m_Layer: 0
   m_Name: Left Arm
-  m_TagString: Untagged
+  m_TagString: Boss Arm
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -761,7 +761,7 @@ MonoBehaviour:
   attackRate: .00999999978
   webBallPrefab: {fileID: 147848, guid: 0adb3aacfa0d7244b975b4a8bcbb7151, type: 2}
   armPrefab: {fileID: 0}
-  BossHealth: 10
+  BossHealth: 5
 --- !u!114 &11440964
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -808,8 +808,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07dbfd9d29ff8c14684512e08d4f8371, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  armSpeed: 3
-  secondsBeforeSmash: 6
+  armSpeed: 7
+  secondsBeforeSmash: 3
 --- !u!114 &11476648
 MonoBehaviour:
   m_ObjectHideFlags: 1

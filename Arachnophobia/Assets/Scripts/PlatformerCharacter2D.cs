@@ -49,6 +49,12 @@ namespace UnityStandardAssets._2D
 
 		private void Update(){
 			healthText.GetComponent<Text>().text = numLives.ToString();
+
+            if (numLives <= 0)
+            {
+                isAlive = false;
+            }
+
 			if (isAlive == false)
 			{
 				gameObject.SetActive(false);
@@ -124,19 +130,8 @@ namespace UnityStandardAssets._2D
 
                     scream.Play();
 
-                    int index = UnityEngine.Random.Range(0, audioSources.Length);    // Get index of sound to play
-
-                    if (numLives == 0)
-                    {
-                        isAlive = false;
-                    }
-
-                    else
-                    {
-                        coll.gameObject.SetActive(false);
-                        isInvincible = true;
-                        Debug.Log(isInvincible + " this should be true");
-                    }
+                    coll.gameObject.SetActive(false);
+                    isInvincible = true;
 
                     Physics2D.IgnoreCollision(GetComponent<Collider2D>(), coll.gameObject.GetComponent<Collider2D>());
                 }
