@@ -47,15 +47,17 @@ namespace UnityStandardAssets._2D
         }
 
 
-        private void Update()
-        {
+		private void Update(){
 			healthText.GetComponent<Text>().text = numLives.ToString();
 			if (isAlive == false)
 			{
 				gameObject.SetActive(false);
 				es.GetComponent<DeathController>().Death();
 			}
+		}
 
+        private void FixedUpdate()
+        {
             m_Grounded = false;
             Vector2 vel = m_Rigidbody2D.velocity;
 
@@ -190,7 +192,6 @@ namespace UnityStandardAssets._2D
             // If the player should bounce...
             if (bounce)
             {
-				Debug.Log("BOUNCE");
                 bounce = false;
                 m_Anim.SetBool("Ground", false);
                 m_Rigidbody2D.velocity = new Vector2(0f, 0f);
@@ -223,7 +224,6 @@ namespace UnityStandardAssets._2D
 
             if (elapsedTime >= flashRate)
             {
-                Debug.Log("Calling SwapColor");
                 SwapColor();
                 colorSwaps += 1;
                 elapsedTime = 0.0f;
