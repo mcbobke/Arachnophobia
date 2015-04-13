@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class SeekandSmash : MonoBehaviour {
+public class ArmSquishController : MonoBehaviour {
 
 	public GameObject player;
 	public float armSpeed = 3.0f;

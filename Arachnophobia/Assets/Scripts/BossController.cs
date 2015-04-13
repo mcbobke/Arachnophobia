@@ -23,7 +23,6 @@ public class BossController : MonoBehaviour {
 	}
 
 	void Start () {
-	
 	}
 
 	void FixedUpdate () {
@@ -45,7 +44,7 @@ public class BossController : MonoBehaviour {
 		Instantiate (webBallPrefab, new Vector2 (-10.40f, -5.0f), new Quaternion (0f, 0f, 0f, 0f));
 	}
 
-	void PincerAttack () {
+	void SmashAttack () {
 	}
 
 	void SquashAttack () {
