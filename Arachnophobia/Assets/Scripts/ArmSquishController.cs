@@ -14,7 +14,7 @@ public class ArmSquishController : MonoBehaviour {
 	private float timer;
 
 	void Start () {
-		minDistancefromOrigin = 2.4f;
+		minDistancefromOrigin = 2.5f;
 		targetPoint = 3.5f;
 
 		Initialize ();
@@ -27,19 +27,17 @@ public class ArmSquishController : MonoBehaviour {
 		if (Random.Range (0.0f, 1.0f) <= 0.5) {
 			isLeftArm = 1;
 			transform.position = new Vector2 (-17.5f, 1.62f);
-			transform.localScale = new Vector2 (2, 2);
+			transform.localScale = new Vector2(2, 2);
 		} else {
 			isLeftArm = -1;
 			transform.position = new Vector2 (17.5f, 1.62f);
-			transform.localScale = new Vector2 (-2, 2);
+			transform.localScale = new Vector2(-2, 2);
 		}
 	}
 	
 	void FixedUpdate () {
 		if (timer < secondsBeforeSmash) {
-			if ((Mathf.Abs(transform.position.x) >= minDistancefromOrigin) ||
-			    	// super hacky, but oh well
-			    	(Mathf.Abs((player.transform.position.x - (isLeftArm * targetPoint)) - (isLeftArm * 12)) > Mathf.Abs(transform.position.x - (isLeftArm * 12)))) {
+			if ((Mathf.Abs(transform.position.x) >= minDistancefromOrigin)) {
 				Vector2 current = new Vector2 (transform.position.x, transform.position.y);
 				Vector2 destionation = new Vector2 (player.transform.position.x - (isLeftArm * targetPoint), transform.position.y);
 				transform.position = Vector2.MoveTowards (current, destionation, Time.deltaTime * armSpeed);

@@ -12,6 +12,7 @@ public class EnemySpawner : MonoBehaviour {
     public GameObject web;                      //Not really an enemy, but should be spawned anyway
 	public GameObject explosion;				//Explosions
     public GameObject killText;
+	public GameObject boss;
 
 	//Spawning Handler
 	public int[] SpawnAmount;					//Amount of enemies available for each tier
@@ -19,11 +20,16 @@ public class EnemySpawner : MonoBehaviour {
 	public int MaxEnemies;						//Max amount of enemies allowed
 	public int SpawnRate;						//Initialize to starting rate
 	public int active;							//Tells how many enemies are active
+	public int ActivateBoss = 1;				//At what divisible amount of kills to activate boss
 	public int KillCount = 0;					//Keeps track of how many enemies have been killed
 													//To access next tier of enemies
 
 	int maxIndex;								//For accessing higher tier of enemies
 	int currentTier = 0;						//Keeps track enemy tiers allowable
+
+	//Boss behavior
+	int restartSpawn = 0;
+	bool bossActive = false;
 
 	//Spawning Location
 	float xDistance = 6;						//Max distance in x direction from center to spawn
@@ -35,7 +41,7 @@ public class EnemySpawner : MonoBehaviour {
 		int currentTierCount = 0;               // Amount of enemies created for current tier
 		maxIndex = SpawnAmount[0];              // Last index of a created enemy in the game (e.g. how many enemies created, NOT spawned)
 		active = 0;                             // How many enemies currently active (spawned)
-		SpawnList = new GameObject[MaxEnemies];
+		SpawnList = new GameObject[MaxEnemies+1];
 		for (int i = 0; i <MaxEnemies; i++){
 			if(currentTierCount >= SpawnAmount[eTier]){     // If # enemies of current tier at peak, go to next tier
 				currentTierCount = 0;
@@ -47,19 +53,36 @@ public class EnemySpawner : MonoBehaviour {
 			enemySpawned.SetActive(false);
 			SpawnList[i] = enemySpawned;                                            // Put it in array
 		}
+		GameObject bossSpawn = (GameObject)Instantiate(boss);
+		bossSpawn.transform.parent = EnemyHeir.transform;
+		bossSpawn.SetActive(false);
+		SpawnList[MaxEnemies] = bossSpawn;
 
 		InvokeRepeating("SpawnEnemy",0.0f, 2f);
 	}
 
 	// Update is called once per frame
 	void Update () {
-
-		if (KillCount >= TierTransition){
+		if (KillCount%ActivateBoss == 0 && !bossActive){
+			DeactivateAll();
+			SpawnList[MaxEnemies].SetActive(true);
+			restartSpawn = SpawnRate;
+			SpawnRate = 0;
+			bossActive = true;
+			active = 0;
+		}
+		else if (KillCount >= TierTransition && !bossActive){
 			TierTransition += TierTransition;       // Move to next tier after certain # of kills
 			EnemyTierProgression();
 		}
 
         killText.GetComponent<Text>().text = KillCount.ToString();
+	}
+
+	void DeactivateAll(){
+		foreach(GameObject spawn in SpawnList){
+			spawn.SetActive(false);
+		}
 	}
 
 	void SpawnEnemy(){

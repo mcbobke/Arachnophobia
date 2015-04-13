@@ -29,6 +29,7 @@ namespace UnityStandardAssets._2D
         private List<String> objTags;
         private Color prevColor;
         public GameObject healthText;
+        private AudioSource[] audioSources;
 
         private void Awake()
         {
@@ -41,6 +42,7 @@ namespace UnityStandardAssets._2D
             prevColor = new Color(255, 255, 255, 0.3f);
             isInvincible = false;
             flashRate = 0.2f;
+            audioSources = GetComponents<AudioSource>();
         }
 
         private void Update()
@@ -79,6 +81,18 @@ namespace UnityStandardAssets._2D
 						es.DeactivateSpider(colliders[i].gameObject);
 						colliders[i].gameObject.SetActive(false);
 						es.KillCount++;
+
+                        int index = UnityEngine.Random.Range(0, audioSources.Length);    // Get index of sound to play
+
+                        bool soundIsPlaying = false;
+                        foreach (AudioSource source in audioSources)
+                        {
+                            if (source.isPlaying)
+                                soundIsPlaying = true;                                  // Check if ANY sound is playing
+                        }
+                        if (!soundIsPlaying)
+                            audioSources[index].Play();                                 // If no sound was playing, play this random sound
+
                     }
                     else if(colliders[i].gameObject.tag != "Boss Arm")
                     {
