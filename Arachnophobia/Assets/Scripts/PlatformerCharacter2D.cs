@@ -129,8 +129,9 @@ namespace UnityStandardAssets._2D
                     --numLives;
 
                     scream.Play();
-
                     coll.gameObject.SetActive(false);
+		    if(coll.gameObject.name != "WebBall")
+                    	es.active--;
                     isInvincible = true;
 
                     Physics2D.IgnoreCollision(GetComponent<Collider2D>(), coll.gameObject.GetComponent<Collider2D>());
