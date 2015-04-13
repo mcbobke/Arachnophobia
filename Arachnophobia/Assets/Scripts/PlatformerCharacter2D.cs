@@ -29,7 +29,8 @@ namespace UnityStandardAssets._2D
         private List<String> objTags;
         private Color prevColor;
         public GameObject healthText;
-        private AudioSource[] audioSources;
+        public AudioSource[] audioSources;
+        public AudioSource scream;
 
         private void Awake()
         {
@@ -118,6 +119,10 @@ namespace UnityStandardAssets._2D
                 if (!isInvincible && coll.gameObject.tag != "Boss Arm" && coll.gameObject.tag != "Weak Spot")
                 {
                     --numLives;
+
+                    scream.Play();
+
+                    int index = UnityEngine.Random.Range(0, audioSources.Length);    // Get index of sound to play
 
                     if (numLives == 0)
                     {

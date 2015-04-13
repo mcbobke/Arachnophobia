@@ -351,7 +351,7 @@ AudioSource:
   m_Pitch: 1
   Loop: 0
   Mute: 0
-  Priority: 160
+  Priority: 128
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -657,7 +657,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
 --- !u!1 &522815693
 GameObject:
   m_ObjectHideFlags: 0
@@ -1054,6 +1054,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 11499664, guid: df8690398e06e084580ba4cc7bea8ca0, type: 2}
+      propertyPath: audioSources.Array.size
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 426780, guid: df8690398e06e084580ba4cc7bea8ca0, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1114,6 +1118,34 @@ Prefab:
       propertyPath: numLives
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 11499664, guid: df8690398e06e084580ba4cc7bea8ca0, type: 2}
+      propertyPath: scream
+      value: 
+      objectReference: {fileID: 1145671896}
+    - target: {fileID: 11499664, guid: df8690398e06e084580ba4cc7bea8ca0, type: 2}
+      propertyPath: extraSoundsController
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 11499664, guid: df8690398e06e084580ba4cc7bea8ca0, type: 2}
+      propertyPath: audioSources.Array.data[0]
+      value: 
+      objectReference: {fileID: 1145671894}
+    - target: {fileID: 11499664, guid: df8690398e06e084580ba4cc7bea8ca0, type: 2}
+      propertyPath: audioSources.Array.data[1]
+      value: 
+      objectReference: {fileID: 1145671895}
+    - target: {fileID: 11499664, guid: df8690398e06e084580ba4cc7bea8ca0, type: 2}
+      propertyPath: audioSources.Array.data[2]
+      value: 
+      objectReference: {fileID: 1145671897}
+    - target: {fileID: 11499664, guid: df8690398e06e084580ba4cc7bea8ca0, type: 2}
+      propertyPath: audioSources.Array.data[3]
+      value: 
+      objectReference: {fileID: 1145671898}
+    - target: {fileID: 11499664, guid: df8690398e06e084580ba4cc7bea8ca0, type: 2}
+      propertyPath: audioSources.Array.data[4]
+      value: 
+      objectReference: {fileID: 1145671899}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: df8690398e06e084580ba4cc7bea8ca0, type: 2}
   m_IsPrefabParent: 0
@@ -1200,6 +1232,75 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 4f0fbed672ab04549a27ff1565909ecd, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+--- !u!82 &1145671896
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1145671893}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: bacf14457662ae740b86f3f7d6be3a6d, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
