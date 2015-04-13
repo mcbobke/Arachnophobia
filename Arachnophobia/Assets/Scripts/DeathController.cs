@@ -13,7 +13,7 @@ public class DeathController : MonoBehaviour {
 
     void Update()
     {
-        if (Input.GetKeyDown("R"))
+        if (Input.GetKeyDown(KeyCode.R))
         {
             Application.LoadLevel(Application.loadedLevel);
         }
