@@ -134,6 +134,8 @@ namespace UnityStandardAssets._2D
                     else
                     {
                         coll.gameObject.SetActive(false);
+						if(coll.gameObject.name != "WebBall")
+							es.active--;
                         isInvincible = true;
                         Debug.Log(isInvincible + " this should be true");
                     }
