@@ -29,7 +29,7 @@ public class BossController : MonoBehaviour {
 
 
 	void SpawnWebBall () {
-		Instantiate (webBallPrefab, new Vector2 (-10.40f, -3.50f), new Quaternion (0f, 0f, 0f, 0f));
+		Instantiate (webBallPrefab, new Vector2 (-10.40f, -5.0f), new Quaternion (0f, 0f, 0f, 0f));
 	}
 
 	void PincerAttack () {
