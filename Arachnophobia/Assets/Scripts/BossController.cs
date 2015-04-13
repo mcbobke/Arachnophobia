@@ -41,7 +41,7 @@ public class BossController : MonoBehaviour {
 				if (randomAttack <= 0.33f) {							// which attack to do
 					SquashAttack();
 				} else if (randomAttack <= 0.66f) {
-					// PincerAttack
+					SmashAttack();
 				} else {
 					SpawnWebBall();
 				}
@@ -65,6 +65,12 @@ public class BossController : MonoBehaviour {
 	}
 
 	void SmashAttack () {
+		//children [4].gameObject.SetActive (true);
+	}
+
+	public void TakeDamage(){
+		GetComponent<Animator>().SetTrigger("hit");
+		BossHealth--;
 	}
 
 	void SquashAttack () {

@@ -71,7 +71,7 @@ namespace UnityStandardAssets._2D
                     bounce = true;
 
 					if(colliders[i].gameObject.tag == "Weak Spot"){
-						Debug.Log ("Handle Weak Spot");
+						es.DeactivateSpider(colliders[i].gameObject);
 					}
 					else if (colliders[i].gameObject.tag != "Web" && colliders[i].gameObject.tag != "Boss Arm" )
                     {

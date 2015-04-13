@@ -75,6 +75,13 @@ public class EnemySpawner : MonoBehaviour {
 			TierTransition += TierTransition;       // Move to next tier after certain # of kills
 			EnemyTierProgression();
 		}
+		if(bossActive){
+			if(!SpawnList[MaxEnemies].activeSelf){
+				bossActive = false;
+				KillCount++;
+				SpawnRate = restartSpawn;
+			}
+		}
 
         killText.GetComponent<Text>().text = KillCount.ToString();
 	}
@@ -126,6 +133,9 @@ public class EnemySpawner : MonoBehaviour {
 		if(obj.tag == "ExplodeSpider"){
 			Vector3 pos = obj.transform.position;
 			Instantiate(explosion, new Vector2(pos.x, pos.y + .3f), new Quaternion(0f, 0f, 0f, 0f));
+		}
+		if(obj.tag == "Weak Spot"){
+			SpawnList[MaxEnemies].GetComponent<BossController>().TakeDamage();
 		}
     }
 }

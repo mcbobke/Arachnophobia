@@ -314,11 +314,13 @@ MonoBehaviour:
   web: {fileID: 159936, guid: f2b1750653b7cd842b7d46deab09dd2c, type: 2}
   explosion: {fileID: 156772, guid: a5911a004014fa14aa79ef15a0376652, type: 2}
   killText: {fileID: 280024878}
+  boss: {fileID: 192778, guid: 8cf26eb2a47fbcf49a5730b8390bd03f, type: 2}
   SpawnAmount: 6400000064000000640000006400000064000000
   TierTransition: 1
   MaxEnemies: 500
   SpawnRate: 1
   active: 0
+  ActivateBoss: 2
   KillCount: 0
 --- !u!1 &280024878
 GameObject:
