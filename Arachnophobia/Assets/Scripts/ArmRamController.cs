@@ -30,8 +30,14 @@ public class ArmRamController : MonoBehaviour {
 			transform.position = Vector2.MoveTowards(current,destination,.35f);
 		}
 		else if(withdrawing){
-			Vector2 current = new Vector2(transform.position.x, transform.position.y);
-			transform.position = Vector2.MoveTowards(current,start,.35f);
+			if(transform.position != new Vector3(start.x,start.y,transform.position.z)){
+				Vector2 current = new Vector2(transform.position.x, transform.position.y);
+				transform.position = Vector2.MoveTowards(current,start,.35f);
+			}
+			else{
+				withdrawing = false;
+				gameObject.SetActive(false);
+			}
 		}
 		else
 			StartCoroutine("Withdraw");
