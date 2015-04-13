@@ -22,5 +22,6 @@ public class DeathController : MonoBehaviour {
     public void Death()
     {
         deathSprite.SetActive(true);
+        deathSprite.GetComponent<AudioSource>().Play();
     }
 }

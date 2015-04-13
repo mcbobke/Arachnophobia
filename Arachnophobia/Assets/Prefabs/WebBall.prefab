@@ -14,7 +14,7 @@ GameObject:
   - 114: {fileID: 11425242}
   m_Layer: 8
   m_Name: WebBall
-  m_TagString: Spider
+  m_TagString: WebBall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

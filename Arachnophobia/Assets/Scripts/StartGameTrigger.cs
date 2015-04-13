@@ -22,6 +22,7 @@ public class StartGameTrigger : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other){
 		if(other.tag=="Player"){
 			GameController.SetActive(true);
+            GameController.GetComponent<AudioSource>().Play();
 			PreGame.SetActive(false);
 			gameObject.SetActive(false);
             Title.SetActive(false);

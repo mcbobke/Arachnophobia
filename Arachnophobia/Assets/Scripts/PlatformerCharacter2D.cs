@@ -38,7 +38,7 @@ namespace UnityStandardAssets._2D
             m_Anim = GetComponent<Animator>();
             m_Rigidbody2D = GetComponent<Rigidbody2D>();
             isAlive = true;
-            objTags = new List<String> { "Spider", "ExplodeSpider", "Web", "WebSpider", "SpiderTall", "Boss Arm", "Weak Spot" };
+            objTags = new List<String> { "Spider", "ExplodeSpider", "Web", "WebSpider", "SpiderTall", "Boss Arm", "Weak Spot", "WebBall" };
             prevColor = new Color(255, 255, 255, 0.3f);
             isInvincible = false;
             flashRate = 0.2f;
@@ -73,7 +73,7 @@ namespace UnityStandardAssets._2D
 					if(colliders[i].gameObject.tag == "Weak Spot"){
 						es.DeactivateSpider(colliders[i].gameObject);
 					}
-					else if (colliders[i].gameObject.tag != "Web" && colliders[i].gameObject.tag != "Boss Arm" )
+					else if (colliders[i].gameObject.tag != "Web" && colliders[i].gameObject.tag != "Boss Arm" && colliders[i].gameObject.tag != "WebBall")
                     {
 						if(colliders[i].gameObject.tag == "ExplodeSpider")
 							colliders[i].gameObject.GetComponent<SpiderExplode>().Reset();
