@@ -391,7 +391,7 @@ MonoBehaviour:
   ground: {fileID: 218360315}
   bossMusic: {fileID: 257985118}
   SpawnAmount: 0300000003000000030000000300000003000000
-  TierTransition: 1
+  TierTransition: 2
   MaxEnemies: 15
   SpawnRate: 1
   active: 0
@@ -799,7 +799,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
 --- !u!1 &522815693
 GameObject:
   m_ObjectHideFlags: 0

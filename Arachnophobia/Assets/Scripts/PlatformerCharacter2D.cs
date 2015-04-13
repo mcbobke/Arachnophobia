@@ -84,6 +84,8 @@ namespace UnityStandardAssets._2D
                     {
 						if(colliders[i].gameObject.tag == "ExplodeSpider")
 							colliders[i].gameObject.GetComponent<SpiderExplode>().Reset();
+                        if (colliders[i].gameObject.tag == "SpiderTall")
+                            numLives++;
 						es.active--;
 						es.DeactivateSpider(colliders[i].gameObject);
 						colliders[i].gameObject.SetActive(false);
@@ -130,7 +132,7 @@ namespace UnityStandardAssets._2D
 
                     scream.Play();
                     coll.gameObject.SetActive(false);
-		    if(coll.gameObject.name != "WebBall")
+		            if(coll.gameObject.name != "WebBall")
                     	es.active--;
                     isInvincible = true;
 
