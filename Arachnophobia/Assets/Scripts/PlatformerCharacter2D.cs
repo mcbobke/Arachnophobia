@@ -105,12 +105,15 @@ namespace UnityStandardAssets._2D
             {
                 if (!isInvincible && coll.gameObject.tag != "Boss Arm" && coll.gameObject.tag != "Weak Spot")
                 {
-                    if (numLives == 1)
+                    --numLives;
+
+                    if (numLives == 0)
+                    {
                         isAlive = false;
+                    }
 
                     else
                     {
-                        --numLives;
                         coll.gameObject.SetActive(false);
                         isInvincible = true;
                         Debug.Log(isInvincible + " this should be true");
