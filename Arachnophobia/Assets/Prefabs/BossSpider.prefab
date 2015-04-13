@@ -633,7 +633,7 @@ MonoBehaviour:
   attackRate: .00999999978
   webBallPrefab: {fileID: 147848, guid: 0adb3aacfa0d7244b975b4a8bcbb7151, type: 2}
   armPrefab: {fileID: 0}
-  BossHealth: 10
+  BossHealth: 5
 --- !u!114 &11440964
 MonoBehaviour:
   m_ObjectHideFlags: 1

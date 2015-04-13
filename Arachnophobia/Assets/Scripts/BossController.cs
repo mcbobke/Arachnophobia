@@ -65,7 +65,7 @@ public class BossController : MonoBehaviour {
 	}
 
 	void SmashAttack () {
-		children [4].gameObject.SetActive (true);
+		//children [4].gameObject.SetActive (true);
 	}
 
 	public void TakeDamage(){
