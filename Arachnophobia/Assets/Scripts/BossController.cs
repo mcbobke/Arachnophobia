@@ -68,6 +68,11 @@ public class BossController : MonoBehaviour {
 		children [4].gameObject.SetActive (true);
 	}
 
+	public void TakeDamage(){
+		GetComponent<Animator>().SetTrigger("hit");
+		BossHealth--;
+	}
+
 	void SquashAttack () {
 		children[2].gameObject.SetActive(true);
 		children[3].gameObject.SetActive(true);
