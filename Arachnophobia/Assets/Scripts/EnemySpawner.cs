@@ -63,7 +63,7 @@ public class EnemySpawner : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		if (KillCount%ActivateBoss == 0 && !bossActive){
+		if (KillCount != 0 && KillCount%ActivateBoss == 0 && !bossActive){
 			DeactivateAll();
 			SpawnList[MaxEnemies].SetActive(true);
 			restartSpawn = SpawnRate;
