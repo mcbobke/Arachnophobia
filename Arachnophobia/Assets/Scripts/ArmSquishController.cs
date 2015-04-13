@@ -12,6 +12,8 @@ public class ArmSquishController : MonoBehaviour {
 	private int isLeftArm;
 	private GameObject player;
 
+	private bool hasHitPlayer;
+
 	private float timer;
 
 	void Start () {
@@ -25,6 +27,7 @@ public class ArmSquishController : MonoBehaviour {
 
 	void Initialize () {
 		timer = 0.0f;
+		hasHitPlayer = false;
 		
 		if (Random.Range (0.0f, 1.0f) <= 0.5) {
 			isLeftArm = 1;
@@ -38,29 +41,37 @@ public class ArmSquishController : MonoBehaviour {
 	}
 	
 	void FixedUpdate () {
-		if (timer < secondsBeforeSmash) {
-			if ((Mathf.Abs(transform.position.x) >= minDistancefromOrigin)) {
-				Vector2 current = new Vector2 (transform.position.x, transform.position.y);
-				Vector2 destionation = new Vector2 (player.transform.position.x - (isLeftArm * targetPoint), transform.position.y);
-				transform.position = Vector2.MoveTowards (current, destionation, Time.deltaTime * armSpeed);
-			}
-		} else {
-			if (transform.position.y > -6.1) { 		 					// if arm is below the ground
-				Vector2 pos = new Vector2 (transform.position.x, transform.position.y);
-				pos.y -= Time.deltaTime * armSpeed * 2;
-				transform.position = pos;
-			}
+		if (hasHitPlayer == false) {
+			if (timer < secondsBeforeSmash) {
+				if ((Mathf.Abs (transform.position.x) >= minDistancefromOrigin)) {
+					Vector2 current = new Vector2 (transform.position.x, transform.position.y);
+					Vector2 destionation = new Vector2 (player.transform.position.x - (isLeftArm * targetPoint), transform.position.y);
+					transform.position = Vector2.MoveTowards (current, destionation, Time.deltaTime * armSpeed);
+				}
+			} else {
+				if (transform.position.y > -6.1) { 		 					// if arm is below the ground
+					Vector2 pos = new Vector2 (transform.position.x, transform.position.y);
+					pos.y -= Time.deltaTime * armSpeed * 2;
+					transform.position = pos;
+				}
 
-			if (timer >= secondsBeforeSmash * 1.5) {
-				Vector2 pos = new Vector2 (transform.position.x, transform.position.y);
-				pos.x -= Time.deltaTime * armSpeed * 2 * isLeftArm;
-				transform.position = pos;
+				if (timer >= secondsBeforeSmash * 1.5) {
+					Vector2 pos = new Vector2 (transform.position.x, transform.position.y);
+					pos.x -= Time.deltaTime * armSpeed * 2 * isLeftArm;
+					transform.position = pos;
 
-				if (Mathf.Abs(transform.position.x) > 18) {
-					Initialize ();
-					this.gameObject.SetActive(false);
+
 				}
 			}
+		} else {
+			Vector2 pos = new Vector2 (transform.position.x, transform.position.y);
+			pos.y += Time.deltaTime * armSpeed;
+			transform.position = pos;
+		}
+
+		if ((Mathf.Abs(transform.position.x) > 18) || (transform.position.y > 7)) {
+			Initialize ();
+			this.gameObject.SetActive(false);
 		}
 
 		timer += Time.deltaTime;
@@ -89,4 +100,10 @@ public class ArmSquishController : MonoBehaviour {
 		}
 	}
 */
+	void OnCollisionEnter2D (Collision2D coll) {
+		if (coll.gameObject.tag == "Player") {
+			hasHitPlayer = true;
+			coll.gameObject.SendMessage("TakeDamage");
+		}
+	}
 }

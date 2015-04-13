@@ -49,7 +49,7 @@ public class BossController : MonoBehaviour {
 			if (Random.Range (0.0f, 1.0f) <= attackRate) {				// to attack or not
 				float randomAttack = Random.Range(0.0f, 1.0f);
 			
-				if (randomAttack <= 0.33f) {							// which attack to do
+				if (randomAttack <= 0.13f) {							// which attack to do
 					SquashAttack();
 				} else if (randomAttack <= 0.66f) {
 					SmashAttack();
