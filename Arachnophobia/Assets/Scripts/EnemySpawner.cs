@@ -135,6 +135,7 @@ public class EnemySpawner : MonoBehaviour {
 			Instantiate(explosion, new Vector2(pos.x, pos.y + .3f), new Quaternion(0f, 0f, 0f, 0f));
 		}
 		if(obj.tag == "Weak Spot"){
+			SpawnList[MaxEnemies].GetComponent<Animator>().SetTrigger("hit");
 			SpawnList[MaxEnemies].GetComponent<BossController>().TakeDamage();
 		}
     }
