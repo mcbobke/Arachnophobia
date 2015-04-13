@@ -198,6 +198,7 @@ GameObject:
   - 4: {fileID: 452656}
   - 212: {fileID: 21223524}
   - 114: {fileID: 11411610}
+  - 95: {fileID: 9515070}
   m_Layer: 0
   m_Name: BossSpider
   m_TagString: Boss
@@ -601,6 +602,23 @@ BoxCollider2D:
   m_Offset: {x: 1.79999995, y: 0}
   serializedVersion: 2
   m_Size: {x: 1.20000005, y: 1.20000005}
+--- !u!95 &9515070
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 192778}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 75c4fc876b1210b4b8ebabb5bd219633, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &11411610
 MonoBehaviour:
   m_ObjectHideFlags: 1

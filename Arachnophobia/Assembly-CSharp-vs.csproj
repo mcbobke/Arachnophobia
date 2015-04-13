@@ -48,6 +48,7 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\ArmDamageEnd.cs" />
      <Compile Include="Assets\Scripts\ArmRamController.cs" />
+     <Compile Include="Assets\Scripts\ArmSquishController.cs" />
      <Compile Include="Assets\Scripts\BookController.cs" />
      <Compile Include="Assets\Scripts\BossController.cs" />
      <Compile Include="Assets\Scripts\BossSpawnWebBall.cs" />
@@ -64,7 +65,6 @@
      <Compile Include="Assets\Scripts\PlatformerCharacter2D.cs" />
      <Compile Include="Assets\Scripts\PlayerExplode.cs" />
      <Compile Include="Assets\Scripts\SJWalk.cs" />
-     <Compile Include="Assets\Scripts\SeekandSmash.cs" />
      <Compile Include="Assets\Scripts\SpiderExplode.cs" />
      <Compile Include="Assets\Scripts\SpiderJumpingWalk.cs" />
      <Compile Include="Assets\Scripts\SpiderWalk.cs" />
