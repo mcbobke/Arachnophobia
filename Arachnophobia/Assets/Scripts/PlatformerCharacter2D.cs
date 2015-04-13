@@ -46,6 +46,11 @@ namespace UnityStandardAssets._2D
         private void Update()
         {
             healthText.GetComponent<Text>().text = numLives.ToString();
+            if (isAlive == false)
+            {
+                gameObject.SetActive(false);
+                es.GetComponent<DeathController>().Death();
+            }
         }
 
         private void FixedUpdate()

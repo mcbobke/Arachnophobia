@@ -261,6 +261,7 @@ GameObject:
   - 4: {fileID: 257985113}
   - 114: {fileID: 257985114}
   - 114: {fileID: 257985115}
+  - 114: {fileID: 257985116}
   m_Layer: 0
   m_Name: _GameController
   m_TagString: GameController
@@ -320,6 +321,17 @@ MonoBehaviour:
   SpawnRate: 1
   active: 0
   KillCount: 0
+--- !u!114 &257985116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 257985112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8890321904e275c42b150e91b6d4ac1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &280024878
 GameObject:
   m_ObjectHideFlags: 0
