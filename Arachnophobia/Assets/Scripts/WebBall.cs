@@ -8,10 +8,10 @@ public class WebBall : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		if (Random.Range (0.0f, 1.0f) <= 0.5) {
-			transform.position = new Vector2 (-10.40f, -3f);
+			transform.position = new Vector2 (-10.40f, -5.5f);
 			GetComponent<Rigidbody2D>().AddForce (new Vector2 (speed, 0), ForceMode2D.Impulse);
 		} else {
-			transform.position = new Vector2 (10.40f, -3f);
+			transform.position = new Vector2 (10.40f, -5.5f);
 			GetComponent<Rigidbody2D>().AddForce (new Vector2 (-1 * speed, 0), ForceMode2D.Impulse);
 		}
 	}
