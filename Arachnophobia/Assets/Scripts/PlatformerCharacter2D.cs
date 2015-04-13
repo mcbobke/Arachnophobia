@@ -121,8 +121,12 @@ namespace UnityStandardAssets._2D
                     Physics2D.IgnoreCollision(GetComponent<Collider2D>(), coll.gameObject.GetComponent<Collider2D>());
                 }
             }
-
-            Debug.Log(numLives);
+			if(coll.gameObject.tag == "Web" && m_Rigidbody2D.velocity.y < 0){		//Fixes the bug with webs and not bouncing
+				bounce = false;
+				m_Anim.SetBool("Ground", false);
+				m_Rigidbody2D.velocity = new Vector2(0f, 0f);
+				m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
+			}
         }
 
         public void Move(float move, bool jump)
@@ -162,6 +166,7 @@ namespace UnityStandardAssets._2D
             // If the player should bounce...
             if (bounce)
             {
+				Debug.Log("BOUNCE");
                 bounce = false;
                 m_Anim.SetBool("Ground", false);
                 m_Rigidbody2D.velocity = new Vector2(0f, 0f);

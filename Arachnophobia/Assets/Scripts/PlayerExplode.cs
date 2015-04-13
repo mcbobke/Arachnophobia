@@ -13,6 +13,7 @@ public class PlayerExplode : MonoBehaviour {
 		if(other.tag != "Player"){
 			other.gameObject.SetActive(false);
 			gc.GetComponent<EnemySpawner>().active -=1;
+			gc.GetComponent<EnemySpawner>().KillCount++;
 		}
 	}
 
