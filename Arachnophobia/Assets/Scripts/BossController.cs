@@ -8,6 +8,8 @@ public class BossController : MonoBehaviour {
 	public GameObject webBallPrefab;
 	public GameObject armPrefab;
 
+	public int BossHealth = 10;
+
 	// Use this for initialization
 	void Start () {
 	

@@ -14,11 +14,11 @@ public class SeekandSmash : MonoBehaviour {
 		if (Random.Range (0.0f, 1.0f) <= 0.5) {
 			isLeftArm = true;
 			transform.position = new Vector2 (-17.5f, -1.62f);
-			transform.scale = new Vector2(2, 2);
+			//transform.scale = new Vector2(2, 2);
 		} else {
 			isLeftArm = false;
 			transform.position = new Vector2 (17.5f, -1.62f);
-			transform.scale = new Vector2(-2, 2);
+			//transform.scale = new Vector2(-2, 2);
 		}
 	}
 	
