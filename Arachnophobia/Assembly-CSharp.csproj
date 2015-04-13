@@ -46,8 +46,6 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\ArmDamageEnd.cs" />
-     <Compile Include="Assets\ArmRamController.cs" />
      <Compile Include="Assets\Scripts\ArmDamageEnd.cs" />
      <Compile Include="Assets\Scripts\ArmRamController.cs" />
      <Compile Include="Assets\Scripts\BookController.cs" />
@@ -75,7 +73,6 @@
      <Compile Include="Assets\Scripts\TallSpiderWalk.cs" />
      <Compile Include="Assets\Scripts\WeakSpot.cs" />
      <Compile Include="Assets\Scripts\WebBall.cs" />
-     <Compile Include="Assets\WeakSpot.cs" />
      <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
