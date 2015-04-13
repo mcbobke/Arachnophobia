@@ -14,9 +14,11 @@ public class BossController : MonoBehaviour {
 	private bool activated;
 
 	public int BossHealth = 10;
+	int health;
 
 	// Use this for initialization
 	void Awake(){
+		health = BossHealth;
 		cam = GameObject.FindGameObjectWithTag("MainCamera");		
 		Intialize();
 		int i = 0;
@@ -30,8 +32,17 @@ public class BossController : MonoBehaviour {
 	void Intialize(){
 		transform.position = new Vector3(0f,-9.7f,transform.position.z);
 		activated = false;
+		BossHealth = health;
 		gameObject.SetActive(false);
 	}
+
+	IEnumerator Death(){
+		Vector2 position = new Vector2(transform.position.x, transform.position.y);
+		transform.position  = Vector2.MoveTowards(position, new Vector2(0f,-9.7f),.1f);
+		yield return new WaitForSeconds(1.8f);
+		Intialize();
+	}
+
 
 	void FixedUpdate () {;
 		if(activated){
@@ -47,7 +58,8 @@ public class BossController : MonoBehaviour {
 				}
 			}
 			if(BossHealth <= 0){
-				Intialize();
+				StartCoroutine("Death");
+				//Intialize();
 			}
 		}
 		else{
@@ -60,12 +72,14 @@ public class BossController : MonoBehaviour {
 	}
 
 
+
+
 	void SpawnWebBall () {
 		Instantiate (webBallPrefab, new Vector2 (-10.40f, -5.0f), new Quaternion (0f, 0f, 0f, 0f));
 	}
 
 	void SmashAttack () {
-		//children [4].gameObject.SetActive (true);
+		children [4].gameObject.SetActive (true);
 	}
 
 	public void TakeDamage(){
