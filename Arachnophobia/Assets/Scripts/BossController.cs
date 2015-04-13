@@ -9,11 +9,16 @@ public class BossController : MonoBehaviour {
 	public GameObject armPrefab;
 
 	private Transform[] children = new Transform[4];
+	private GameObject cam;
+
+	private bool activated;
 
 	public int BossHealth = 10;
 
 	// Use this for initialization
 	void Awake(){
+		cam = GameObject.FindGameObjectWithTag("MainCamera");		
+		Intialize();
 		int i = 0;
 		foreach(Transform child in transform){
 			children[i] = child;
@@ -22,21 +27,35 @@ public class BossController : MonoBehaviour {
 		}
 	}
 
-	void Start () {
-	
+	void Intialize(){
+		transform.position = new Vector3(0f,-9.7f,transform.position.z);
+		activated = false;
+		gameObject.SetActive(false);
 	}
 
 	void FixedUpdate () {
-		if (Random.Range (0.0f, 1.0f) <= attackRate) {				// to attack or not
-			float randomAttack = Random.Range(0.0f, 1.0f);
-		
-			if (randomAttack <= 0.33f) {							// which attack to do
-				SquashAttack();
-			} else if (randomAttack <= 0.66f) {
-				// PincerAttack
-			} else {
-				SpawnWebBall();
+		if(activated){
+			if (Random.Range (0.0f, 1.0f) <= attackRate) {				// to attack or not
+				float randomAttack = Random.Range(0.0f, 1.0f);
+			
+				if (randomAttack <= 0.33f) {							// which attack to do
+					SquashAttack();
+				} else if (randomAttack <= 0.66f) {
+					// PincerAttack
+				} else {
+					SpawnWebBall();
+				}
 			}
+			if(BossHealth <= 0){
+				Intialize();
+			}
+		}
+		else{
+			Vector2 current = new Vector2(transform.position.x, transform.position.y);
+			if(current == new Vector2(0f,.8f))
+				activated = true;
+			transform.position = Vector2.MoveTowards(current, new Vector2(0f,.8f),.1f);
+			cam.GetComponent<CameraController>().Shake();
 		}
 	}
 
