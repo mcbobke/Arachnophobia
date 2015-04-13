@@ -5,6 +5,8 @@ Matt Bobke		mbobke@uci.edu
 Arielle Chongco         achongco@uci.edu
 Arzang Kasiri		akasiri@uci.edu
 
+YES YOU HAVE PERMISSION TO POST THE PICTURE AND OUR GAME :)
+
 Theme
 
 A Hopeless Amount of Spiders
