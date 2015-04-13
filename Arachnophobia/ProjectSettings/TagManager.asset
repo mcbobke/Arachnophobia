@@ -16,6 +16,8 @@ TagManager:
   - Boss
   - Boss Arm
   - Weak Spot
+  - SpiderTall
+  - WebBall
   layers:
   - Default
   - TransparentFX
