@@ -37,7 +37,7 @@ namespace UnityStandardAssets._2D
             m_Anim = GetComponent<Animator>();
             m_Rigidbody2D = GetComponent<Rigidbody2D>();
             isAlive = true;
-            objTags = new List<String> { "Spider", "ExplodeSpider", "Web", "WebSpider", "SpiderTall", "Boss Arm" };
+            objTags = new List<String> { "Spider", "ExplodeSpider", "Web", "WebSpider", "SpiderTall", "Boss Arm", "Weak Spot" };
             prevColor = new Color(255, 255, 255, 0.3f);
             isInvincible = false;
             flashRate = 0.2f;
@@ -46,6 +46,11 @@ namespace UnityStandardAssets._2D
         private void Update()
         {
             healthText.GetComponent<Text>().text = numLives.ToString();
+            if (isAlive == false)
+            {
+                gameObject.SetActive(false);
+                es.GetComponent<DeathController>().Death();
+            }
         }
 
         private void FixedUpdate()
@@ -62,12 +67,11 @@ namespace UnityStandardAssets._2D
                 if (colliders[i].gameObject != gameObject && objTags.Contains(colliders[i].gameObject.tag) && m_Grounded == false && vel.y < 0)
                 {
                     bounce = true;
-                    
-					//CHANGED FOR EXPLODING - Arielle
-					if(colliders[i].gameObject.tag == "Boss Arm"){
 
+					if(colliders[i].gameObject.tag == "Weak Spot"){
+						Debug.Log ("Handle Weak Spot");
 					}
-                    else if (colliders[i].gameObject.tag != "Web")
+					else if (colliders[i].gameObject.tag != "Web" && colliders[i].gameObject.tag != "Boss Arm" )
                     {
 						if(colliders[i].gameObject.tag == "ExplodeSpider")
 							colliders[i].gameObject.GetComponent<SpiderExplode>().Reset();
@@ -76,7 +80,7 @@ namespace UnityStandardAssets._2D
 						colliders[i].gameObject.SetActive(false);
 						es.KillCount++;
                     }
-                    else
+                    else if(colliders[i].gameObject.tag != "Boss Arm")
                     {
                         Destroy(colliders[i].gameObject);
                     }
@@ -99,14 +103,17 @@ namespace UnityStandardAssets._2D
         {
             if (objTags.Contains(coll.gameObject.tag) && coll.gameObject.tag != "Web")
             {
-                if (!isInvincible && coll.gameObject.tag != "Boss Arm")
+                if (!isInvincible && coll.gameObject.tag != "Boss Arm" && coll.gameObject.tag != "Weak Spot")
                 {
-                    if (numLives == 1)
+                    --numLives;
+
+                    if (numLives == 0)
+                    {
                         isAlive = false;
+                    }
 
                     else
                     {
-                        --numLives;
                         coll.gameObject.SetActive(false);
                         isInvincible = true;
                         Debug.Log(isInvincible + " this should be true");
@@ -121,8 +128,12 @@ namespace UnityStandardAssets._2D
                     Physics2D.IgnoreCollision(GetComponent<Collider2D>(), coll.gameObject.GetComponent<Collider2D>());
                 }
             }
-
-            Debug.Log(numLives);
+			if(coll.gameObject.tag == "Web" && m_Rigidbody2D.velocity.y < 0){		//Fixes the bug with webs and not bouncing
+				bounce = false;
+				m_Anim.SetBool("Ground", false);
+				m_Rigidbody2D.velocity = new Vector2(0f, 0f);
+				m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
+			}
         }
 
         public void Move(float move, bool jump)
@@ -162,6 +173,7 @@ namespace UnityStandardAssets._2D
             // If the player should bounce...
             if (bounce)
             {
+				Debug.Log("BOUNCE");
                 bounce = false;
                 m_Anim.SetBool("Ground", false);
                 m_Rigidbody2D.velocity = new Vector2(0f, 0f);

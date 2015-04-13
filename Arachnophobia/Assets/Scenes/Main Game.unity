@@ -261,6 +261,7 @@ GameObject:
   - 4: {fileID: 257985113}
   - 114: {fileID: 257985114}
   - 114: {fileID: 257985115}
+  - 114: {fileID: 257985116}
   m_Layer: 0
   m_Name: _GameController
   m_TagString: GameController
@@ -320,6 +321,18 @@ MonoBehaviour:
   SpawnRate: 1
   active: 0
   KillCount: 0
+--- !u!114 &257985116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 257985112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8890321904e275c42b150e91b6d4ac1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathSprite: {fileID: 838786436}
 --- !u!1 &280024878
 GameObject:
   m_ObjectHideFlags: 0
@@ -809,6 +822,60 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a2e0135b3e7289241ba78a69a4b77ce2, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &838786436
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 838786438}
+  - 212: {fileID: 838786437}
+  m_Layer: 0
+  m_Name: Death
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!212 &838786437
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 838786436}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 1
+  m_ReflectionProbeUsage: 1
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_ImportantGI: 0
+  m_AutoUVMaxDistance: .5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: a259c1eb8631dac46aba0958d9531ccd, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!4 &838786438
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 838786436}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -1.23000002, z: 0}
+  m_LocalScale: {x: 9.27898884, y: 8.32522202, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
 --- !u!1 &1006932816
 GameObject:
   m_ObjectHideFlags: 0
@@ -903,7 +970,7 @@ Prefab:
       objectReference: {fileID: 1470402548}
     - target: {fileID: 11499664, guid: df8690398e06e084580ba4cc7bea8ca0, type: 2}
       propertyPath: numLives
-      value: 15
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: df8690398e06e084580ba4cc7bea8ca0, type: 2}

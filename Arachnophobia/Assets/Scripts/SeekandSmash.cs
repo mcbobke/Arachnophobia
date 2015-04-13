@@ -25,6 +25,7 @@ public class SeekandSmash : MonoBehaviour {
 		timer = 0.0f;
 		
 		if (Random.Range (0.0f, 1.0f) <= 0.5) {
+<<<<<<< HEAD
 			isLeftArm = 1;
 			transform.position = new Vector2 (-17.5f, 1.62f);
 			transform.localScale = new Vector2(2, 2);
@@ -32,6 +33,15 @@ public class SeekandSmash : MonoBehaviour {
 			isLeftArm = -1;
 			transform.position = new Vector2 (17.5f, 1.62f);
 			transform.localScale = new Vector2(-2, 2);
+=======
+			isLeftArm = true;
+			transform.position = new Vector2 (-17.5f, -1.62f);
+			//transform.scale = new Vector2(2, 2);
+		} else {
+			isLeftArm = false;
+			transform.position = new Vector2 (17.5f, -1.62f);
+			//transform.scale = new Vector2(-2, 2);
+>>>>>>> origin/master
 		}
 	}
 	
