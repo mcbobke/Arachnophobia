@@ -57,7 +57,7 @@ public class ArmSquishController : MonoBehaviour {
 
 				if (timer >= secondsBeforeSmash * 1.5) {
 					Vector2 pos = new Vector2 (transform.position.x, transform.position.y);
-					pos.x -= Time.deltaTime * armSpeed * 2 * isLeftArm;
+					pos.x -= Time.deltaTime * armSpeed * 5 * isLeftArm;
 					transform.position = pos;
 
 
