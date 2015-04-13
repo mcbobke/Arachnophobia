@@ -3,17 +3,19 @@ using System.Collections;
 
 public class ArmSquishController : MonoBehaviour {
 
-	public GameObject player;
+
 	public float armSpeed = 3.0f;
 	public float secondsBeforeSmash = 3.0f;
 
 	private float minDistancefromOrigin;			// arm isn't long enough to reach any further than this close to the origin
 	private float targetPoint;						// the part of the arm that the spider tries to line up with the player
 	private int isLeftArm;
+	private GameObject player;
 
 	private float timer;
 
 	void Start () {
+		player = GameObject.Find ("Player");
 		minDistancefromOrigin = 2.5f;
 		targetPoint = 3.5f;
 
