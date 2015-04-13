@@ -45,18 +45,16 @@ namespace UnityStandardAssets._2D
             audioSources = GetComponents<AudioSource>();
         }
 
+
         private void Update()
         {
-            healthText.GetComponent<Text>().text = numLives.ToString();
-            if (isAlive == false)
-            {
-                gameObject.SetActive(false);
-                es.GetComponent<DeathController>().Death();
-            }
-        }
+			healthText.GetComponent<Text>().text = numLives.ToString();
+			if (isAlive == false)
+			{
+				gameObject.SetActive(false);
+				es.GetComponent<DeathController>().Death();
+			}
 
-        private void FixedUpdate()
-        {
             m_Grounded = false;
             Vector2 vel = m_Rigidbody2D.velocity;
 

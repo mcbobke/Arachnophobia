@@ -59,7 +59,6 @@ public class BossController : MonoBehaviour {
 			}
 			if(BossHealth <= 0){
 				StartCoroutine("Death");
-				//Intialize();
 			}
 		}
 		else{
