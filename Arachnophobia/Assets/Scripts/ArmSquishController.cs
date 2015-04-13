@@ -77,29 +77,6 @@ public class ArmSquishController : MonoBehaviour {
 		timer += Time.deltaTime;
 	}
 
-/*
-	void RotateToZero () {
-		if (transform.rotation.z >= 0) {
-			Quaternion rot = transform.rotation;
-			rot.Euler( 0, 0, Time.deltaTime * rotationSpeed * -1);
-			transform.rotation = rot;
-		} 
-		else if (transform.rotation.z <= 0) {
-			Quaternion rot = transform.rotation;
-			rot.Euler( 0, 0, Time.deltaTime * rotationSpeed);
-			transform.rotation = rot;
-		} 
-		else {
-			return;
-		}
-
-		if (transform.rotation.z <= Mathf.Abs(Time.deltaTime * rotationSpeed)) {
-			Vector2 rot = transform.rotation;
-			rot.z = 0;
-			transform.rotation = rot;
-		}
-	}
-*/
 	void OnCollisionEnter2D (Collision2D coll) {
 		if (coll.gameObject.tag == "Player") {
 			hasHitPlayer = true;
