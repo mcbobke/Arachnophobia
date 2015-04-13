@@ -8,7 +8,7 @@ public class BossController : MonoBehaviour {
 	public GameObject webBallPrefab;
 	public GameObject armPrefab;
 
-	private Transform[] children = new Transform[4];
+	private Transform[] children = new Transform[5];
 	private GameObject cam;
 
 	private bool activated;
@@ -33,7 +33,7 @@ public class BossController : MonoBehaviour {
 		gameObject.SetActive(false);
 	}
 
-	void FixedUpdate () {
+	void FixedUpdate () {;
 		if(activated){
 			if (Random.Range (0.0f, 1.0f) <= attackRate) {				// to attack or not
 				float randomAttack = Random.Range(0.0f, 1.0f);

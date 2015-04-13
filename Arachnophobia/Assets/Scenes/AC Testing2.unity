@@ -320,7 +320,7 @@ MonoBehaviour:
   MaxEnemies: 500
   SpawnRate: 1
   active: 0
-  ActivateBoss: 2
+  ActivateBoss: 1
   KillCount: 0
 --- !u!1 &280024878
 GameObject:
