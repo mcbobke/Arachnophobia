@@ -15,3 +15,5 @@ Various artists that had hosted their work online have been credited in the game
 
 ## How to Play
 Download the Build folder inside the project folder and run the executable (Windows). Otherwise, clone the project and run the main scene, or build the project for your platform.
+
+Use the A key to move left, D key to move right, and the Space Bar to jump. Jump and land on top of the spiders that spawn to kill them. There are different kinds of spiders that have different characteristics, so be careful! Watch out for the angry king spider...
