@@ -3,20 +3,18 @@ using System.Collections;
 
 public class ExplosionHelper : MonoBehaviour
 {
-	void Start(){
-
-	}
-    void OnTriggerEnter2D(Collider2D coll)
+    private void OnTriggerEnter2D(Collider2D coll)
     {
         if (coll.gameObject.tag == "Player")
         {
             GetComponentInParent<SpiderExplode>().exTriggered = true;
-			GetComponentInParent<SpiderExplode>().inRange = true;
+            GetComponentInParent<SpiderExplode>().inRange = true;
         }
     }
 
-	void OnTriggerExit2D(Collider2D coll){
-		if (coll.gameObject.tag == "Player")
-			GetComponentInParent<SpiderExplode>().inRange = false;
-	}
+    private void OnTriggerExit2D(Collider2D coll)
+    {
+        if (coll.gameObject.tag == "Player")
+            GetComponentInParent<SpiderExplode>().inRange = false;
+    }
 }

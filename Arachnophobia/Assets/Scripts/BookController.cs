@@ -1,22 +1,25 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class BookController : MonoBehaviour {
+public class BookController : MonoBehaviour
+{
+    public GameObject TutorialDisplay;
 
-	public GameObject TutorialDisplay;
+    // Use this for initialization
+    private void Awake()
+    {
+        TutorialDisplay.SetActive(false);
+    }
 
-	// Use this for initialization
-	void Awake () {
-		TutorialDisplay.SetActive(false);
-	}
-	
-	void OnTriggerEnter2D(Collider2D other){
-		if(other.tag == "Player")
-			TutorialDisplay.SetActive(true);
-	}
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "Player")
+            TutorialDisplay.SetActive(true);
+    }
 
-	void OnTriggerExit2D(Collider2D other){
-		if(other.tag == "Player")
-			TutorialDisplay.SetActive(false);
-	}
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.tag == "Player")
+            TutorialDisplay.SetActive(false);
+    }
 }

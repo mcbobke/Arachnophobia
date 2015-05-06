@@ -2,16 +2,16 @@
 using System.Collections;
 using UnityStandardAssets.CrossPlatformInput;
 
-public class DeathController : MonoBehaviour {
-
+public class DeathController : MonoBehaviour
+{
     public GameObject deathSprite;
 
-    void Awake()
+    private void Awake()
     {
         deathSprite.SetActive(false);
     }
 
-    void Update()
+    private void Update()
     {
         if (Input.GetKeyDown(KeyCode.R))
         {

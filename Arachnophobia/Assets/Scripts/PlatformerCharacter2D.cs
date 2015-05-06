@@ -7,23 +7,26 @@ namespace UnityStandardAssets._2D
 {
     public class PlatformerCharacter2D : MonoBehaviour
     {
-        private float m_MaxSpeed = 6f;                   // The fastest the player can travel in the x axis.
-        private float m_JumpForce = 500f;                 // Amount of force added when the player jumps.
-        private bool m_AirControl = true;                 // Whether or not a player can steer while jumping.
-        const float k_GroundedRadius = .2f;               // Radius of the overlap circle to determine if grounded.
-        private bool m_Grounded;                          // Whether or not the player is grounded.
-        private bool m_FacingRight = false;                // For determining which way the player is currently facing.
-        private bool bounce = false;                      // For determining whether or not the player should bounce.
-        public int numLives;                              // How many lives the player has.
-        private bool isAlive;                             // If the player is alive.
-        private float elapsedTime;                        // Amount of time that has elapsed since last color switch.
-        private int colorSwaps;                           // Number of color swaps that have been done.
-        public int flashesBeforeNotInvincible;            // Number of total color changes (change and then change back) before becoming vulnerable again.
+        private float m_MaxSpeed = 6f; // The fastest the player can travel in the x axis.
+        private float m_JumpForce = 500f; // Amount of force added when the player jumps.
+        private bool m_AirControl = true; // Whether or not a player can steer while jumping.
+        private const float k_GroundedRadius = .2f; // Radius of the overlap circle to determine if grounded.
+        private bool m_Grounded; // Whether or not the player is grounded.
+        private bool m_FacingRight = false; // For determining which way the player is currently facing.
+        private bool bounce = false; // For determining whether or not the player should bounce.
+        public int numLives; // How many lives the player has.
+        private bool isAlive; // If the player is alive.
+        private float elapsedTime; // Amount of time that has elapsed since last color switch.
+        private int colorSwaps; // Number of color swaps that have been done.
+
+        public int flashesBeforeNotInvincible;
+            // Number of total color changes (change and then change back) before becoming vulnerable again.
+
         private bool isInvincible;
         private float flashRate;
 
-        private Transform m_GroundCheck;                  // A position marking where to check if the player is grounded.
-        private Animator m_Anim;                          // Reference to the player's animator component.
+        private Transform m_GroundCheck; // A position marking where to check if the player is grounded.
+        private Animator m_Anim; // Reference to the player's animator component.
         private Rigidbody2D m_Rigidbody2D;
         public EnemySpawner es;
         private List<String> objTags;
@@ -39,7 +42,17 @@ namespace UnityStandardAssets._2D
             m_Anim = GetComponent<Animator>();
             m_Rigidbody2D = GetComponent<Rigidbody2D>();
             isAlive = true;
-            objTags = new List<String> { "Spider", "ExplodeSpider", "Web", "WebSpider", "SpiderTall", "Boss Arm", "Weak Spot", "WebBall" };
+            objTags = new List<String>
+            {
+                "Spider",
+                "ExplodeSpider",
+                "Web",
+                "WebSpider",
+                "SpiderTall",
+                "Boss Arm",
+                "Weak Spot",
+                "WebBall"
+            };
             prevColor = new Color(255, 255, 255, 0.3f);
             isInvincible = false;
             flashRate = 0.2f;
@@ -47,20 +60,21 @@ namespace UnityStandardAssets._2D
         }
 
 
-		private void Update(){
-			healthText.GetComponent<Text>().text = numLives.ToString();
+        private void Update()
+        {
+            healthText.GetComponent<Text>().text = numLives.ToString();
 
             if (numLives <= 0)
             {
                 isAlive = false;
             }
 
-			if (isAlive == false)
-			{
-				gameObject.SetActive(false);
-				es.GetComponent<DeathController>().Death();
-			}
-		}
+            if (isAlive == false)
+            {
+                gameObject.SetActive(false);
+                es.GetComponent<DeathController>().Death();
+            }
+        }
 
         private void FixedUpdate()
         {
@@ -73,37 +87,39 @@ namespace UnityStandardAssets._2D
             for (int i = 0; i < colliders.Length; i++)
             {
                 // m_Grounded should already be false at this point because you have to jump to be able to bounce, also have to be falling
-                if (colliders[i].gameObject != gameObject && objTags.Contains(colliders[i].gameObject.tag) && m_Grounded == false && vel.y < 0)
+                if (colliders[i].gameObject != gameObject && objTags.Contains(colliders[i].gameObject.tag) &&
+                    m_Grounded == false && vel.y < 0)
                 {
                     bounce = true;
 
-					if(colliders[i].gameObject.tag == "Weak Spot"){
-						es.DeactivateSpider(colliders[i].gameObject);
-					}
-					else if (colliders[i].gameObject.tag != "Web" && colliders[i].gameObject.tag != "Boss Arm" && colliders[i].gameObject.tag != "WebBall")
+                    if (colliders[i].gameObject.tag == "Weak Spot")
                     {
-						if(colliders[i].gameObject.tag == "ExplodeSpider")
-							colliders[i].gameObject.GetComponent<SpiderExplode>().Reset();
+                        es.DeactivateSpider(colliders[i].gameObject);
+                    }
+                    else if (colliders[i].gameObject.tag != "Web" && colliders[i].gameObject.tag != "Boss Arm" &&
+                             colliders[i].gameObject.tag != "WebBall")
+                    {
+                        if (colliders[i].gameObject.tag == "ExplodeSpider")
+                            colliders[i].gameObject.GetComponent<SpiderExplode>().Reset();
                         if (colliders[i].gameObject.tag == "SpiderTall")
                             numLives++;
-						es.active--;
-						es.DeactivateSpider(colliders[i].gameObject);
-						colliders[i].gameObject.SetActive(false);
-						es.KillCount++;
+                        es.active--;
+                        es.DeactivateSpider(colliders[i].gameObject);
+                        colliders[i].gameObject.SetActive(false);
+                        es.KillCount++;
 
-                        int index = UnityEngine.Random.Range(0, audioSources.Length);    // Get index of sound to play
+                        int index = UnityEngine.Random.Range(0, audioSources.Length); // Get index of sound to play
 
                         bool soundIsPlaying = false;
                         foreach (AudioSource source in audioSources)
                         {
                             if (source.isPlaying)
-                                soundIsPlaying = true;                                  // Check if ANY sound is playing
+                                soundIsPlaying = true; // Check if ANY sound is playing
                         }
                         if (!soundIsPlaying)
-                            audioSources[index].Play();                                 // If no sound was playing, play this random sound
-
+                            audioSources[index].Play(); // If no sound was playing, play this random sound
                     }
-                    else if(colliders[i].gameObject.tag != "Boss Arm")
+                    else if (colliders[i].gameObject.tag != "Boss Arm")
                     {
                         Destroy(colliders[i].gameObject);
                     }
@@ -132,8 +148,8 @@ namespace UnityStandardAssets._2D
 
                     scream.Play();
                     coll.gameObject.SetActive(false);
-		            if(coll.gameObject.name != "WebBall")
-                    	es.active--;
+                    if (coll.gameObject.name != "WebBall")
+                        es.active--;
                     isInvincible = true;
 
                     Physics2D.IgnoreCollision(GetComponent<Collider2D>(), coll.gameObject.GetComponent<Collider2D>());
@@ -145,12 +161,14 @@ namespace UnityStandardAssets._2D
                     Physics2D.IgnoreCollision(GetComponent<Collider2D>(), coll.gameObject.GetComponent<Collider2D>());
                 }
             }
-			if(coll.gameObject.tag == "Web" && m_Rigidbody2D.velocity.y < 0){		//Fixes the bug with webs and not bouncing
-				bounce = false;
-				m_Anim.SetBool("Ground", false);
-				m_Rigidbody2D.velocity = new Vector2(0f, 0f);
-				m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
-			}
+            if (coll.gameObject.tag == "Web" && m_Rigidbody2D.velocity.y < 0)
+            {
+                //Fixes the bug with webs and not bouncing
+                bounce = false;
+                m_Anim.SetBool("Ground", false);
+                m_Rigidbody2D.velocity = new Vector2(0f, 0f);
+                m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
+            }
         }
 
         public void Move(float move, bool jump)
@@ -162,7 +180,7 @@ namespace UnityStandardAssets._2D
                 m_Anim.SetFloat("Speed", Mathf.Abs(move));
 
                 // Move the character
-                m_Rigidbody2D.velocity = new Vector2(move * m_MaxSpeed, m_Rigidbody2D.velocity.y);
+                m_Rigidbody2D.velocity = new Vector2(move*m_MaxSpeed, m_Rigidbody2D.velocity.y);
 
                 // If the input is moving the player right and the player is facing left...
                 if (move > 0 && !m_FacingRight)
@@ -227,17 +245,20 @@ namespace UnityStandardAssets._2D
                 elapsedTime = 0.0f;
             }
 
-            if ((colorSwaps / 2) >= flashesBeforeNotInvincible)
+            if ((colorSwaps/2) >= flashesBeforeNotInvincible)
             {
                 isInvincible = false;
                 colorSwaps = 0;
             }
         }
-		public void TakeDamage(){
-			if(!isInvincible){
-				isInvincible = true;
-				numLives--;
-			}
-		}
+
+        public void TakeDamage()
+        {
+            if (!isInvincible)
+            {
+                isInvincible = true;
+                numLives--;
+            }
+        }
     }
 }

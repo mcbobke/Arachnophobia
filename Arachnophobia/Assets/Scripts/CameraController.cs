@@ -1,14 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CameraController : MonoBehaviour {
-
+public class CameraController : MonoBehaviour
+{
     private float shakeIntensity;
     private float shakeDecay;
     private Vector3 originalCameraPos;
 
     // Use this for initialization
-    void Start()
+    private void Start()
     {
         originalCameraPos = gameObject.transform.position;
         shakeIntensity = 0f;
@@ -16,13 +16,13 @@ public class CameraController : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         if (shakeIntensity > 0)
         {
-            gameObject.transform.position = originalCameraPos + Random.insideUnitSphere * shakeIntensity;
+            gameObject.transform.position = originalCameraPos + Random.insideUnitSphere*shakeIntensity;
 
-            shakeIntensity -= Time.deltaTime * shakeDecay;
+            shakeIntensity -= Time.deltaTime*shakeDecay;
         }
 
         else
