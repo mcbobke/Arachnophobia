@@ -11,5 +11,7 @@ This game was created during the 2015 Spring Quarter Game Jam hosted by the Vide
 | Arzang Kasiri | akasiri@uci.edu | Programmer/Audio Designer |
 | Arielle Chongco | achongco@uci.edu | Programmer |
 
+Various artists that had hosted their work online have been credited in the game's main menu.
+
 ## How to Play
 Download the Build folder inside the project folder and run the executable (Windows). Otherwise, clone the project and run the main scene, or build the project for your platform.
