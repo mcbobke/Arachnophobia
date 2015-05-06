@@ -12,4 +12,4 @@ This game was created during the 2015 Spring Quarter Game Jam hosted by the Vide
 | Arielle Chongco | Programmer |
 
 ## How to Play
-Download the ProdBuild folder and run the executable (Windows). Otherwise, clone the project and run the main scene, or build the project for your platform.
+Download the Build folder inside the project folder and run the executable (Windows). Otherwise, clone the project and run the main scene, or build the project for your platform.
